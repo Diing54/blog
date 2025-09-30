@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Beginners on My DevOps Blog</title>
+    <link>http://10.0.232.214:1313/tags/beginners/</link>
+    <description>Recent content in Beginners on My DevOps Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Sep 2024 19:10:00 +0300</lastBuildDate>
+    <atom:link href="http://10.0.232.214:1313/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with DevOps</title>
+      <link>http://10.0.232.214:1313/posts/fifteenth-post/</link>
+      <pubDate>Mon, 30 Sep 2024 19:10:00 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fifteenth-post/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-devops&#34;&gt;Welcome to DevOps&lt;/h2&gt;
+&lt;p&gt;Welcome to the world of DevOps! This field combines software development and IT operations to deliver applications and services faster.&lt;/p&gt;
+&lt;h3 id=&#34;key-concepts&#34;&gt;Key Concepts:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Continuous Integration&lt;/strong&gt;: Automatically testing code changes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure as Code&lt;/strong&gt;: Managing infrastructure through code&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Containerization&lt;/strong&gt;: Using Docker for application packaging&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitoring&lt;/strong&gt;: Tracking system performance and health&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;why-devops-matters&#34;&gt;Why DevOps Matters&lt;/h2&gt;
+&lt;p&gt;DevOps practices help teams deploy code more frequently with fewer failures. Welcome to this exciting journey of automation and collaboration!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

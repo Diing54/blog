@@ -1,0 +1,356 @@
+{{ define "main" }}
+<div class="search-page">
+    <!-- Search Header -->
+    <div class="search-header">
+        <h1 class="search-title">{{ i18n "search" }}</h1>
+        <p class="search-description">{{ i18n "search_description" }}</p>
+    </div>
+    
+    <!-- Search Box -->
+    <div class="search-box-container">
+        <input 
+            class="search-input" 
+            id="search-query" 
+            name="s" 
+            type="search" 
+            placeholder="{{ i18n "search_placeholder" }}"
+            aria-label="Search"
+            autocomplete="off"
+            autofocus
+        />
+    </div>
+    
+    <!-- Search Results -->
+    <div id="search-results" class="search-results">
+        <div class="no-results" id="default-state">
+            <h3>{{ i18n "search_start" }}</h3>
+            <p>{{ i18n "search_instructions" }}</p>
+        </div>
+        <div id="loading-state" class="no-results" style="display: none;">
+            <h3>Searching...</h3>
+        </div>
+        <div id="results-container" style="display: none;"></div>
+        <div id="no-results-state" class="no-results" style="display: none;">
+            <h3>No matches found</h3>
+            <p id="no-results-query"></p>
+        </div>
+    </div>
+</div>
+
+<style>
+.search-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.search-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.search-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.search-description {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+.search-box-container {
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--entry);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-shadow);
+}
+
+.search-results {
+    min-height: 200px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--secondary);
+}
+
+.no-results h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Search Results Styling */
+.search-result {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.result-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.result-content {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.result-footer {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+/* Highlight styling */
+mark {
+    background: var(--highlight);
+    color: var(--primary);
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .search-input {
+        background: var(--theme);
+    }
+    
+    mark {
+        background: var(--highlight-dark);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .search-page {
+        padding: 1rem 0.5rem;
+    }
+    
+    .search-title {
+        font-size: 2rem;
+    }
+    
+    .search-result {
+        padding: 1rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-query');
+    const searchResults = document.getElementById('search-results');
+    const defaultState = document.getElementById('default-state');
+    const loadingState = document.getElementById('loading-state');
+    const resultsContainer = document.getElementById('results-container');
+    const noResultsState = document.getElementById('no-results-state');
+    const noResultsQuery = document.getElementById('no-results-query');
+    
+    let searchData = [];
+    let isSearching = false;
+
+    // Load search index
+    fetch('{{ "index.json" | absURL }}')
+        .then(response => response.json())
+        .then(data => {
+            searchData = data;
+        })
+        .catch(error => {
+            console.error('Error loading search index:', error);
+        });
+
+    function showState(state) {
+        // Hide all states first
+        defaultState.style.display = 'none';
+        loadingState.style.display = 'none';
+        resultsContainer.style.display = 'none';
+        noResultsState.style.display = 'none';
+        
+        // Show the requested state
+        switch(state) {
+            case 'default':
+                defaultState.style.display = 'block';
+                break;
+            case 'loading':
+                loadingState.style.display = 'block';
+                break;
+            case 'results':
+                resultsContainer.style.display = 'block';
+                break;
+            case 'no-results':
+                noResultsState.style.display = 'block';
+                break;
+        }
+    }
+
+    function performSearch(query) {
+        if (isSearching) return;
+        isSearching = true;
+        
+        if (!searchData.length) {
+            showState('loading');
+            isSearching = false;
+            return;
+        }
+        
+        if (!query.trim()) {
+            showState('default');
+            isSearching = false;
+            return;
+        }
+        
+        showState('loading');
+        
+        // Use setTimeout to allow UI to update before heavy computation
+        setTimeout(() => {
+            const results = [];
+            const lowerQuery = query.toLowerCase();
+            
+            searchData.forEach(post => {
+                let hasMatch = false;
+                let titleMatch = false;
+                const contentMatches = [];
+                
+                // Search in title
+                if (post.title && post.title.toLowerCase().includes(lowerQuery)) {
+                    hasMatch = true;
+                    titleMatch = true;
+                }
+                
+                // Search in content with sentence extraction
+                if (post.plainContent || post.content) {
+                    const content = post.plainContent || post.content;
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = content;
+                    const decodedContent = tempDiv.textContent || tempDiv.innerText || '';
+                    
+                    const sentences = decodedContent.split(/[.!?]+/);
+                    
+                    sentences.forEach(sentence => {
+                        const cleanSentence = sentence.trim();
+                        if (cleanSentence.length > 10 && cleanSentence.toLowerCase().includes(lowerQuery)) {
+                            hasMatch = true;
+                            const highlightedSentence = highlightText(cleanSentence, query);
+                            contentMatches.push(highlightedSentence);
+                        }
+                    });
+                }
+                
+                if (hasMatch) {
+                    const displayTitle = titleMatch ? highlightText(post.title, query) : post.title;
+                    
+                    results.push({
+                        postTitle: displayTitle,
+                        postUrl: post.permalink,
+                        contentMatches: contentMatches,
+                        titleMatch: titleMatch
+                    });
+                }
+            });
+            
+            // Update UI in one operation
+            if (results.length === 0) {
+                noResultsQuery.textContent = `No results for "${query}"`;
+                showState('no-results');
+            } else {
+                let html = '';
+                
+                results.forEach((result) => {
+                    const contentDisplay = result.contentMatches.length > 0 
+                        ? result.contentMatches.slice(0, 3).join('... ')
+                        : (result.titleMatch ? 'Title matches your search' : '');
+                    
+                    html += `
+                        <div class="search-result" onclick="window.location.href='${result.postUrl}'">
+                            <div class="result-title">${result.postTitle}</div>
+                            ${contentDisplay ? `
+                            <div class="result-content">
+                                ${contentDisplay}
+                            </div>
+                            ` : ''}
+                            <div class="result-footer">Click to read full article</div>
+                        </div>
+                    `;
+                });
+                
+                resultsContainer.innerHTML = html;
+                showState('results');
+            }
+            
+            isSearching = false;
+        }, 50); // Small delay to ensure UI updates
+    }
+    
+    // Function to highlight text
+    function highlightText(text, query) {
+        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+    
+    // Event listener with better debouncing
+    let searchTimeout;
+    let lastQuery = '';
+    
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.trim();
+        
+        // Skip if same query or still searching
+        if (query === lastQuery || isSearching) return;
+        lastQuery = query;
+        
+        clearTimeout(searchTimeout);
+        
+        if (query.length === 0) {
+            showState('default');
+            return;
+        }
+        
+        // Show loading for very fast searches, but skip for single character deletions
+        if (query.length > 1 || query.length > lastQuery.length) {
+            showState('loading');
+        }
+        
+        searchTimeout = setTimeout(() => {
+            performSearch(query);
+        }, 300); // Increased debounce time for smoother experience
+    });
+    
+    // Focus search input on page load
+    searchInput.focus();
+});
+</script>
+{{ end }}

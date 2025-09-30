@@ -1,0 +1,61 @@
+baseURL = 'http://localhost:1313/'
+title = 'My DevOps Blog'
+theme = 'PaperMod'
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  description = 'Documenting my DevOps learning journey'
+  defaultTheme = 'light'
+  customCSS = ['css/custom.css']
+  
+  [params.search]
+    enable = true
+    type = "fuse"
+  
+  [params.profileMode]
+    enabled = false
+    
+  [params.homeInfoParams]
+    enabled = true
+    Title = "DevOps Learning Journey"
+    Content = """
+    Welcome to my digital garden where I document my path learning DevOps 
+    technologies and system administration. This space serves as both my 
+    learning journal and a resource for others interested in infrastructure,
+    automation, and cloud technologies.
+
+    I'm currently focused on mastering Linux fundamentals, containerization
+    with Docker, infrastructure as code, and building reliable CI/CD pipelines.
+    Each post represents a concept I've explored deeply, often with practical
+    examples and code snippets that you can use in your own projects.
+    """
+
+  mainSections = ['posts']
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+
+[[menu.main]]
+  name = 'Search'
+  url = '/search/'
+  weight = 5
+
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  name = 'Tags'
+  url = '/tags/'
+  weight = 20
+
+[[menu.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 30

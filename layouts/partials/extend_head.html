@@ -1,0 +1,183 @@
+{{ if eq .Layout "search" }}
+<style>
+/* Enhanced search results with sentence highlighting */
+.fuse-result {
+    border-left: 3px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: var(--code-bg);
+    border-radius: 4px;
+}
+
+.fuse-result:hover {
+    background: var(--code-bg);
+    transform: translateX(2px);
+    transition: all 0.2s ease;
+}
+
+.fuse-result .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.fuse-result .sentence {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.fuse-result .source {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.fuse-result mark {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.search-stats {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--secondary);
+    font-style: italic;
+    padding: 2rem;
+}
+</style>
+
+<script>
+// Enhanced search functionality with sentence highlighting
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-query');
+    const searchResults = document.getElementById('search-results');
+    const searchStats = document.createElement('div');
+    searchStats.className = 'search-stats';
+    
+    if (searchInput && searchResults) {
+        // Insert stats above results
+        searchResults.parentNode.insertBefore(searchStats, searchResults);
+        
+        let searchData = [];
+        
+        // Load the search index
+        fetch('/index.json')
+            .then(response => response.json())
+            .then(data => {
+                searchData = data;
+                searchStats.textContent = `Loaded ${data.length} posts. Start typing to search...`;
+            })
+            .catch(error => {
+                console.error('Error loading search index:', error);
+            });
+        
+        // Enhanced search function
+        function performEnhancedSearch(query) {
+            if (!query.trim()) {
+                searchStats.textContent = `Loaded ${searchData.length} posts. Start typing to search...`;
+                return;
+            }
+            
+            const results = [];
+            const lowerQuery = query.toLowerCase();
+            
+            searchData.forEach(post => {
+                // Search in title
+                if (post.title && post.title.toLowerCase().includes(lowerQuery)) {
+                    const highlightedTitle = post.title.replace(
+                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
+                        match => `<mark>${match}</mark>`
+                    );
+                    results.push({
+                        type: 'title',
+                        content: highlightedTitle,
+                        postTitle: post.title,
+                        postUrl: post.permalink,
+                        source: 'Title'
+                    });
+                }
+                
+                // Search in content with sentence extraction
+                if (post.content) {
+                    // Decode HTML entities
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.content;
+                    const decodedContent = tempDiv.textContent || tempDiv.innerText || '';
+                    
+                    // Split into sentences and find matches
+                    const sentences = decodedContent.split(/[.!?]+/);
+                    
+                    sentences.forEach(sentence => {
+                        const cleanSentence = sentence.trim();
+                        if (cleanSentence.length > 10 && cleanSentence.toLowerCase().includes(lowerQuery)) {
+                            const highlightedSentence = cleanSentence.replace(
+                                new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
+                                match => `<mark>${match}</mark>`
+                            );
+                            results.push({
+                                type: 'content',
+                                content: highlightedSentence,
+                                postTitle: post.title,
+                                postUrl: post.permalink,
+                                source: 'Content'
+                            });
+                        }
+                    });
+                }
+            });
+            
+            // Update results display
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No results found for "' + query + '"</div>';
+                searchStats.textContent = `Searched ${searchData.length} posts - 0 results for "${query}"`;
+            } else {
+                let html = '';
+                results.forEach(result => {
+                    html += `
+                        <div class="fuse-result" onclick="window.location.href='${result.postUrl}'" style="cursor: pointer;">
+                            <div class="title">${result.postTitle}</div>
+                            <div class="sentence">${result.content}</div>
+                            <div class="source">Found in: ${result.source}</div>
+                        </div>
+                    `;
+                });
+                searchResults.innerHTML = html;
+                searchStats.textContent = `Found ${results.length} matches in ${searchData.length} posts for "${query}"`;
+            }
+        }
+        
+        // Override the default search behavior
+        let originalInputHandler;
+        if (searchInput._hugoSearchHandler) {
+            originalInputHandler = searchInput._hugoSearchHandler;
+            searchInput.removeEventListener('input', originalInputHandler);
+        }
+        
+        // Add enhanced search with debouncing
+        let searchTimeout;
+        searchInput.addEventListener('input', function(e) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performEnhancedSearch(e.target.value);
+            }, 150);
+        });
+        
+        // Also trigger search if there's already text in the input
+        if (searchInput.value) {
+            performEnhancedSearch(searchInput.value);
+        }
+    }
+});
+</script>
+{{ end }}

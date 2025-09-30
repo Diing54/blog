@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on My DevOps Blog</title>
+    <link>http://10.0.232.214:1313/tags/linux/</link>
+    <description>Recent content in Linux on My DevOps Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Sep 2025 17:45:38 +0300</lastBuildDate>
+    <atom:link href="http://10.0.232.214:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fourteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/fourteenth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:45:38 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fourteenth-post/</guid>
+      <description>&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Thirteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/thirteenth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:40:40 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/thirteenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

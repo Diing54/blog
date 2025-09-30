@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My DevOps Blog</title>
+    <link>http://10.0.232.214:1313/</link>
+    <description>Recent content on My DevOps Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Sep 2025 17:45:38 +0300</lastBuildDate>
+    <atom:link href="http://10.0.232.214:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fourteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/fourteenth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:45:38 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fourteenth-post/</guid>
+      <description>&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Thirteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/thirteenth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:40:40 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/thirteenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Twelfth Post</title>
+      <link>http://10.0.232.214:1313/posts/twelfth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:36:45 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/twelfth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eleventh Post</title>
+      <link>http://10.0.232.214:1313/posts/eleventh-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:28:14 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/eleventh-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tenth Post</title>
+      <link>http://10.0.232.214:1313/posts/tenth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:27:29 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/tenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ninth Post</title>
+      <link>http://10.0.232.214:1313/posts/ninth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:26:33 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/ninth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eighth Post</title>
+      <link>http://10.0.232.214:1313/posts/eighth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:25:46 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/eighth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seventh Post</title>
+      <link>http://10.0.232.214:1313/posts/seventh-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:25:04 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/seventh-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sixth Post</title>
+      <link>http://10.0.232.214:1313/posts/sixth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:24:13 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/sixth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fifth Post</title>
+      <link>http://10.0.232.214:1313/posts/fifth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:22:19 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fifth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fourth Post</title>
+      <link>http://10.0.232.214:1313/posts/fourth-post/</link>
+      <pubDate>Tue, 30 Sep 2025 17:21:41 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fourth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Third Post</title>
+      <link>http://10.0.232.214:1313/posts/third-post/</link>
+      <pubDate>Tue, 30 Sep 2025 15:52:27 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/third-post/</guid>
+      <description>&lt;p&gt;This is my third post testing hugo and papermod theme&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Second Post</title>
+      <link>http://10.0.232.214:1313/posts/second-post/</link>
+      <pubDate>Tue, 30 Sep 2025 15:49:45 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/second-post/</guid>
+      <description>&lt;p&gt;This is my second post testing hugo and papermod theme !!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First Post</title>
+      <link>http://10.0.232.214:1313/posts/first-post/</link>
+      <pubDate>Tue, 30 Sep 2025 15:47:27 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/first-post/</guid>
+      <description>&lt;p&gt;This is my first post testing hugo and papermod theme&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started with DevOps</title>
+      <link>http://10.0.232.214:1313/posts/fifteenth-post/</link>
+      <pubDate>Mon, 30 Sep 2024 19:10:00 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/fifteenth-post/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-devops&#34;&gt;Welcome to DevOps&lt;/h2&gt;
+&lt;p&gt;Welcome to the world of DevOps! This field combines software development and IT operations to deliver applications and services faster.&lt;/p&gt;
+&lt;h3 id=&#34;key-concepts&#34;&gt;Key Concepts:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Continuous Integration&lt;/strong&gt;: Automatically testing code changes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure as Code&lt;/strong&gt;: Managing infrastructure through code&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Containerization&lt;/strong&gt;: Using Docker for application packaging&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitoring&lt;/strong&gt;: Tracking system performance and health&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;why-devops-matters&#34;&gt;Why DevOps Matters&lt;/h2&gt;
+&lt;p&gt;DevOps practices help teams deploy code more frequently with fewer failures. Welcome to this exciting journey of automation and collaboration!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
