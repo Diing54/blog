@@ -2,16 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://10.0.232.214:1313/posts/26-post/</loc>
+    <lastmod>2025-10-01T19:40:06+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/</loc>
+    <lastmod>2025-10-01T19:40:06+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/</loc>
+    <lastmod>2025-10-01T19:40:06+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/25-post/</loc>
+    <lastmod>2025-10-01T19:39:36+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/24-post/</loc>
+    <lastmod>2025-10-01T19:38:52+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/23-post/</loc>
+    <lastmod>2025-10-01T19:38:19+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/22-post/</loc>
+    <lastmod>2025-10-01T19:37:55+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/21-post/</loc>
+    <lastmod>2025-10-01T19:37:02+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/20-post/</loc>
+    <lastmod>2025-10-01T19:36:23+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/nineteenth-post/</loc>
+    <lastmod>2025-10-01T19:35:40+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/eighteenth-post/</loc>
+    <lastmod>2025-10-01T19:34:58+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/seventeenth-post/</loc>
+    <lastmod>2025-10-01T19:34:10+03:00</lastmod>
+  </url><url>
+    <loc>http://10.0.232.214:1313/posts/sixteenth-post/</loc>
+    <lastmod>2025-10-01T19:33:13+03:00</lastmod>
+  </url><url>
     <loc>http://10.0.232.214:1313/posts/fourteenth-post/</loc>
     <lastmod>2025-09-30T17:45:38+03:00</lastmod>
   </url><url>
     <loc>http://10.0.232.214:1313/tags/linux/</loc>
-    <lastmod>2025-09-30T17:45:38+03:00</lastmod>
-  </url><url>
-    <loc>http://10.0.232.214:1313/</loc>
-    <lastmod>2025-09-30T17:45:38+03:00</lastmod>
-  </url><url>
-    <loc>http://10.0.232.214:1313/posts/</loc>
     <lastmod>2025-09-30T17:45:38+03:00</lastmod>
   </url><url>
     <loc>http://10.0.232.214:1313/tags/</loc>

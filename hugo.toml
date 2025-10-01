@@ -1,5 +1,5 @@
 baseURL = 'http://localhost:1313/'
-title = 'My DevOps Blog'
+title = 'Diing'
 theme = 'PaperMod'
 
 [pagination]
@@ -21,7 +21,7 @@ theme = 'PaperMod'
     enabled = false
     
   [params.homeInfoParams]
-    enabled = true
+    enabled = false
     Title = "DevOps Learning Journey"
     Content = """
     Welcome to my digital garden where I document my path learning DevOps 
@@ -39,6 +39,11 @@ theme = 'PaperMod'
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
+
+  # Remove or comment out these lines since we're handling it in the custom layout
+  # ShowRecentPosts = true
+  # RecentPostsTitle = "My Recent Posts"
+  # HomePostCount = 5
 
 [[menu.main]]
   name = 'Search'

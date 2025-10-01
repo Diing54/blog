@@ -1,13 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on My DevOps Blog</title>
+    <title>Posts on Diing</title>
     <link>http://10.0.232.214:1313/posts/</link>
-    <description>Recent content in Posts on My DevOps Blog</description>
+    <description>Recent content in Posts on Diing</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Sep 2025 17:45:38 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 19:40:06 +0300</lastBuildDate>
     <atom:link href="http://10.0.232.214:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>26 Post</title>
+      <link>http://10.0.232.214:1313/posts/26-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:40:06 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/26-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod theme !!&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>25 Post</title>
+      <link>http://10.0.232.214:1313/posts/25-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:39:36 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/25-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>24 Post</title>
+      <link>http://10.0.232.214:1313/posts/24-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:38:52 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/24-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>23 Post</title>
+      <link>http://10.0.232.214:1313/posts/23-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:38:19 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/23-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod theme&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>22 Post</title>
+      <link>http://10.0.232.214:1313/posts/22-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:37:55 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/22-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>21 Post</title>
+      <link>http://10.0.232.214:1313/posts/21-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:37:02 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/21-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod theme&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>20 Post</title>
+      <link>http://10.0.232.214:1313/posts/20-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:36:23 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/20-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Nineteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/nineteenth-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:35:40 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/nineteenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Eighteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/eighteenth-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:34:58 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/eighteenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Seventeenth Post</title>
+      <link>http://10.0.232.214:1313/posts/seventeenth-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:34:10 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/seventeenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Sixteenth Post</title>
+      <link>http://10.0.232.214:1313/posts/sixteenth-post/</link>
+      <pubDate>Wed, 01 Oct 2025 19:33:13 +0300</pubDate>
+      <guid>http://10.0.232.214:1313/posts/sixteenth-post/</guid>
+      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Fourteenth Post</title>
       <link>http://10.0.232.214:1313/posts/fourteenth-post/</link>

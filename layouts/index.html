@@ -1,39 +1,72 @@
 {{ define "main" }}
-<div class="home-page">
-    <!-- Keep your existing home info section -->
-    {{- if .Site.Params.homeInfoParams }}
-    <div class="home-info">
-        <header class="entry-header">
-            <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
-        </header>
-        <div class="entry-content">
-            {{ .Site.Params.homeInfoParams.Content | markdownify }}
+<div class="custom-homepage">
+    <!-- Only show intro on first page -->
+    {{- if eq .Paginator.PageNumber 1 }}
+    <section class="custom-intro">
+        <h1 class="intro-title">Welcome to my Tech Yard</h1>
+        <div class="intro-content">
+            <p class="intro-paragraph">Hello! I'm Diing, a final-year Computer Science student. I discovered a passion for DevOps and cloud-native technologies. For the past year, I have been daily driving Linux as my primary OS because without Linux,as they say, DevOps is a myth. I've decided to dive in the rest of this journey while documenting everything I learn.</p>
+            
+            <p class="intro-paragraph">This is my tech yard where I share thoughts, practical examples, code snippets, some notes and insights as I explore Linux, Docker, Kubernetes, Infrastructure as Code, and other interesting stuff.</p>
         </div>
-    </div>
+    </section>
     {{- end }}
 
-    <!-- Add "My Recent Posts" title and the posts -->
+    <!-- Recent Posts Section -->
     {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-    {{- if and (gt (len $pages) 0) }}
-    <div class="recent-posts-section">
-        <h2 class="recent-posts-title">My Recent Posts</h2>
-        {{- range $pages.ByDate.Reverse | first 5 }}
-            <article class="post-entry">
-                <header class="entry-header">
-                    <h3>{{ .Title }}</h3>
+    {{- $paginator := .Paginate $pages.ByDate.Reverse 10 }}
+    
+    {{- if gt (len $pages) 0 }}
+    <section class="custom-recent-posts">
+        {{- if eq .Paginator.PageNumber 1 }}
+        <div class="section-spacer"></div>
+        <h2 class="section-title">Most Recent Posts ...</h2>
+        <div class="section-spacer"></div>
+        {{- else }}
+        
+        {{- end }}
+        
+        <div class="posts-container">
+            {{- range $paginator.Pages }}
+            {{- if ne .Title "Search" }} <!-- Remove search card -->
+            <article class="custom-post-entry" onclick="window.location.href='{{ .Permalink }}'">
+                <header class="post-header">
+                    <h3 class="post-title">{{ .Title }}</h3>
                 </header>
                 {{- if (ne (.Param "hideSummary") true) }}
-                <div class="entry-content">
+                <div class="post-summary">
                     <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
                 </div>
                 {{- end }}
-                <footer class="entry-footer">
-                    {{ partial "post_meta.html" . }}
+                <footer class="post-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ if .WordCount }}<span> · {{ .WordCount }} words</span>{{ end }}
                 </footer>
-                <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
             </article>
+            {{- end }}
+            {{- end }}
+        </div>
+
+        <!-- Pagination - PaperMod style -->
+        {{- if gt $paginator.TotalPages 1 }}
+        <footer class="page-footer">
+            <nav class="pagination">
+                {{- if $paginator.HasPrev }}
+                <a class="pagination-button prev" href="{{ $paginator.Prev.URL }}">
+                    <span class="pagination-arrow">←</span>
+                    <span class="pagination-text">Previous</span>
+                </a>
+                {{- end }}
+                {{- if $paginator.HasNext }}
+                <a class="pagination-button next" href="{{ $paginator.Next.URL }}">
+                    <span class="pagination-text">Next</span>
+                    <span class="pagination-arrow">→</span>
+                </a>
+                {{- end }}
+            </nav>
+        </footer>
         {{- end }}
-    </div>
+    </section>
     {{- end }}
 </div>
 {{ end }}
