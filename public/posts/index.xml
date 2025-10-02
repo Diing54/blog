@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Diing</title>
-    <link>http://10.0.232.214:1313/posts/</link>
+    <link>http://10.50.40.9:1313/posts/</link>
     <description>Recent content in Posts on Diing</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en</language>
     <lastBuildDate>Wed, 01 Oct 2025 21:07:08 +0300</lastBuildDate>
-    <atom:link href="http://10.0.232.214:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.50.40.9:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Official Post</title>
-      <link>http://10.0.232.214:1313/posts/first-official-post/</link>
+      <link>http://10.50.40.9:1313/posts/first-official-post/</link>
       <pubDate>Wed, 01 Oct 2025 21:07:08 +0300</pubDate>
-      <guid>http://10.0.232.214:1313/posts/first-official-post/</guid>
+      <guid>http://10.50.40.9:1313/posts/first-official-post/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
