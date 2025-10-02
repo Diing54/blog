@@ -2,19 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://10.50.40.9:1313/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/script-for-devops-notes/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/first-official-post/</loc>
     <lastmod>2025-10-01T21:07:08+03:00</lastmod>
   </url><url>
-    <loc>http://10.50.40.9:1313/posts/first-official-post/</loc>
-    <lastmod>2025-10-01T21:07:08+03:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://10.50.40.9:1313/posts/</loc>
-    <lastmod>2025-10-01T21:07:08+03:00</lastmod>
-  </url><url>
-    <loc>http://10.50.40.9:1313/categories/</loc>
-  </url><url>
-    <loc>http://10.50.40.9:1313/search/</loc>
-  </url><url>
-    <loc>http://10.50.40.9:1313/tags/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
