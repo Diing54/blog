@@ -2,25 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Diing</title>
-    <link>http://10.0.232.214:1313/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Diing</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Sep 2025 17:45:38 +0300</lastBuildDate>
-    <atom:link href="http://10.0.232.214:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Oct 2025 14:07:04 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fourteenth Post</title>
-      <link>http://10.0.232.214:1313/posts/fourteenth-post/</link>
-      <pubDate>Tue, 30 Sep 2025 17:45:38 +0300</pubDate>
-      <guid>http://10.0.232.214:1313/posts/fourteenth-post/</guid>
-      <description>&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Thirteenth Post</title>
-      <link>http://10.0.232.214:1313/posts/thirteenth-post/</link>
-      <pubDate>Tue, 30 Sep 2025 17:40:40 +0300</pubDate>
-      <guid>http://10.0.232.214:1313/posts/thirteenth-post/</guid>
-      <description>&lt;p&gt;I am testing hugo and papermod&lt;/p&gt;</description>
+      <title>Created Another Script</title>
+      <link>http://localhost:1313/posts/created-another-script/</link>
+      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
+      <guid>http://localhost:1313/posts/created-another-script/</guid>
+      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.
+&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;
+&lt;li&gt;Enter your blog title&lt;/li&gt;
+&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;
+&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
   </channel>
 </rss>
