@@ -10,6 +10,7 @@ Another day creating another automation, it may not be a complex one but still i
 - Enter your blog title
 - The scripts automatically generates a file using Hugo's archetype template. The file's name is the title provided
 - It then opens the file automatically in Neovim for editing
+
 **The script:**
 ```bash
 #!/bin/bash
@@ -18,7 +19,7 @@ cd "$BLOG_DIR"
 read -p "Enter post title: " title
 filename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g')
 hugo new "posts/${filename}.md"
-nvim "content/posts/${filename}.md"
+nvim "content/posts/${filename}.md"```
 
 
 
