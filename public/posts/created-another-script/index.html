@@ -123,13 +123,11 @@ The script:">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>BLOG_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/blog&#34;</span>
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;</span>$BLOG_DIR<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Enter post title: &#34;</span> title
-</span></span><span style="display:flex;"><span>filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$title<span style="color:#e6db74">&#34;</span> | tr <span style="color:#e6db74">&#39;[:upper:]&#39;</span> <span style="color:#e6db74">&#39;[:lower:]&#39;</span> | tr <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#e6db74">&#39;-&#39;</span> | sed <span style="color:#e6db74">&#39;s/[^a-z0-9-]//g&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$title<span style="color:#e6db74">&#34;</span> | tr <span style="color:#e6db74">&#39;[:upper:]&#39;</span> <span style="color:#e6db74">&#39;[:lower:]&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#e6db74">&#39;-&#39;</span> | sed <span style="color:#e6db74">&#39;s/[^a-z0-9-]//g&#39;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>hugo new <span style="color:#e6db74">&#34;posts/</span><span style="color:#e6db74">${</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
 </span></span><span style="display:flex;"><span>nvim <span style="color:#e6db74">&#34;content/posts/</span><span style="color:#e6db74">${</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
-</span></span></code></pre></div><pre tabindex="0"><code>
+</span></span></code></pre></div><h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
 
-### References
-</code></pre>
 
   </div>
 

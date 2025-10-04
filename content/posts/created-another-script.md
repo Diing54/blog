@@ -12,16 +12,15 @@ Another day creating another automation, it may not be a complex one but still i
 - It then opens the file automatically in Neovim for editing
 
 **The script:**
+
 ```bash
 #!/bin/bash
 BLOG_DIR="$HOME/blog"
 cd "$BLOG_DIR"
 read -p "Enter post title: " title
-filename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g')
+filename=$(echo "$title" | tr '[:upper:]' '[:lower:]' ' ' '-' | sed 's/[^a-z0-9-]//g')
 hugo new "posts/${filename}.md"
 nvim "content/posts/${filename}.md"
 ```
-```
-
 
 ### References
