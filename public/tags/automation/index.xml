@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Automation on Diing</title>
-    <link>http://localhost:1313/blog/tags/automation/</link>
+    <link>https://Diing54.github.io/blog/tags/automation/</link>
     <description>Recent content in Automation on Diing</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en</language>
     <lastBuildDate>Sat, 04 Oct 2025 14:07:04 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Diing54.github.io/blog/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Created Another Script</title>
-      <link>http://localhost:1313/blog/posts/created-another-script/</link>
+      <link>https://Diing54.github.io/blog/posts/created-another-script/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/created-another-script/</guid>
+      <guid>https://Diing54.github.io/blog/posts/created-another-script/</guid>
       <description>I created a bash script that automates my Hugo blogging workflow - create posts from anywhere with one command!</description>
     </item>
     <item>
       <title>Script for Devops Notes</title>
-      <link>http://localhost:1313/blog/posts/script-for-devops-notes/</link>
+      <link>https://Diing54.github.io/blog/posts/script-for-devops-notes/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/script-for-devops-notes/</guid>
+      <guid>https://Diing54.github.io/blog/posts/script-for-devops-notes/</guid>
       <description>&lt;p&gt;I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.&lt;/p&gt;</description>
     </item>
   </channel>
