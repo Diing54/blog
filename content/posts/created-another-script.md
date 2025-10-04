@@ -3,6 +3,11 @@ date = '2025-10-04T14:07:04+03:00'
 draft = false
 title = 'Created Another Script'
 tags = ["Automation","Bash","linux"]
+
+
+# Add these lines for Twitter/Open Graph
+images = ['/images/posts/created-another-script-preview.jpg']
+description = "I created a bash script that automates my Hugo blogging workflow - create posts from anywhere with one command!"
 +++
 Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command "blog".
 **How it works**

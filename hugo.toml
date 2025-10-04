@@ -9,6 +9,7 @@ theme = 'PaperMod'
   home = ["HTML", "RSS", "JSON"]
 
 [params]
+  env = "production"
   description = 'Documenting my DevOps learning journey'
   defaultTheme = 'light'
   customCSS = ['css/custom.css']
