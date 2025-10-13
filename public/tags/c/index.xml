@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>C on Diing</title>
+    <link>https://Diing54.github.io/blog/tags/c/</link>
+    <description>Recent content in C on Diing</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Oct 2025 18:06:19 +0300</lastBuildDate>
+    <atom:link href="https://Diing54.github.io/blog/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Under the Hood of a Gcc Compiler</title>
+      <link>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
+      <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
+      <guid>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
+      <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;
+&lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;
+&lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

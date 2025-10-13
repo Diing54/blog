@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Under the Hood of a Gcc Compiler | Diing</title>
+<meta name="keywords" content="C">
+<meta name="description" content="Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:">
+<meta name="author" content="">
+<link rel="canonical" href="https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.aa1688e6339fb9cdf60fb826eb1256f070690680649dc91f2bd39903f51f15e3.css" integrity="sha256-qhaI5jOfuc32D7gm6xJW8HBpBoBknckfK9OZA/UfFeM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Diing54.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Diing54.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Diing54.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Diing54.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Diing54.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<meta property="og:url" content="https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/">
+  <meta property="og:site_name" content="Diing">
+  <meta property="og:title" content="Under the Hood of a Gcc Compiler">
+  <meta property="og:description" content="Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-11T18:06:19+03:00">
+    <meta property="article:modified_time" content="2025-10-11T18:06:19+03:00">
+    <meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Under the Hood of a Gcc Compiler">
+<meta name="twitter:description" content="Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Diing54.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Under the Hood of a Gcc Compiler",
+      "item": "https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Under the Hood of a Gcc Compiler",
+  "name": "Under the Hood of a Gcc Compiler",
+  "description": "Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?\nI am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.\nI created a simple file main.c below:\n",
+  "keywords": [
+    "C"
+  ],
+  "articleBody": "Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?\nI am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.\nI created a simple file main.c below:\n#include int main() { int a = 10; int b = 5; int result = a + b; printf(\"The result is: %d\\n\", result); return 0; } Step 1: Invoking the Preprocessor This is the first stage. The preprocessor finds this line, #include , in order to extract the stdio.h header file and paste its entire contents into our source code main.c\nWe run the command gcc -E main.c -o main.i The -E flag tells the GCC to stop after preprocessing -o main.i specifies the output file name. The .i extension is the standard for preprocessed C files Step 2: Compile to Assembly Code We take the preprocessed file and compile it to assembly language, a low-level, but still human-readable.\nWe run the command gcc -S main.i -o main.s The -S flag tells the compiler/GCC to stop after compiling to assembly The output is main.s with assembly code inside Step 3: Assemble to Object Code The assembler’s job is to convert the human-readable assembly code into pure machine code (binary)\nWe run the command gcc -c main.s -o main.o The -c flag tells the compiler to stop after the assembly stage The output is the object file main.o which is not yet executable Step 4: Link to Create an Executable File Our object file main.o contains the machine code for our main function but it doesn’t contain the code for the printf function. The linker’s job is to find the printf code in the C standard library and combine it with our object file to create a runnable program\nWe run the command gcc main.o -o my_program The final executable file my_program is created In the terminal, we can now run our program\n./my_program\nThe output is:\nThe result is: 15\nReferences ",
+  "wordCount" : "363",
+  "inLanguage": "en",
+  "datePublished": "2025-10-11T18:06:19+03:00",
+  "dateModified": "2025-10-11T18:06:19+03:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Diing",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Diing54.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Diing54.github.io/blog/" accesskey="h" title="Diing (Alt + H)">Diing</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Diing54.github.io/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Diing54.github.io/blog/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Diing54.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Diing54.github.io/blog/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Under the Hood of a Gcc Compiler
+    </h1>
+    <div class="post-meta"><span title='2025-10-11 18:06:19 +0300 EAT'>October 11, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?</p>
+<p>I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.</p>
+<p>I created a simple file <code>main.c</code> below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The result is: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, result);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="step-1-invoking-the-preprocessor">Step 1: Invoking the Preprocessor<a hidden class="anchor" aria-hidden="true" href="#step-1-invoking-the-preprocessor">#</a></h3>
+<p>This is the first stage. The preprocessor finds this line, <code>#include &lt;stdio.h&gt;</code>, in order to extract the stdio.h header file and paste its entire contents into our source code <code>main.c</code></p>
+<ul>
+<li>We run the command <code>gcc -E main.c -o main.i</code></li>
+<li>The <code>-E</code> flag tells the GCC to stop after preprocessing</li>
+<li><code>-o main.i</code> specifies the output file name. The <code>.i</code> extension is the standard for preprocessed C files</li>
+</ul>
+<h3 id="step-2-compile-to-assembly-code">Step 2: Compile to Assembly Code<a hidden class="anchor" aria-hidden="true" href="#step-2-compile-to-assembly-code">#</a></h3>
+<p>We take the preprocessed file and compile it to assembly language, a low-level, but still human-readable.</p>
+<ul>
+<li>We run the command <code>gcc -S main.i -o main.s</code></li>
+<li>The <code>-S</code> flag tells the compiler/GCC to stop after compiling to assembly</li>
+<li>The output is <code>main.s</code> with assembly code inside</li>
+</ul>
+<h3 id="step-3-assemble-to-object-code">Step 3: Assemble to Object Code<a hidden class="anchor" aria-hidden="true" href="#step-3-assemble-to-object-code">#</a></h3>
+<p>The assembler&rsquo;s job is to convert the human-readable assembly code into pure machine code (binary)</p>
+<ul>
+<li>We run the command <code>gcc -c main.s -o main.o</code></li>
+<li>The <code>-c</code> flag tells the compiler to stop after the assembly stage</li>
+<li>The output is the object file <code>main.o</code> which is not yet executable</li>
+</ul>
+<h3 id="step-4-link-to-create-an-executable-file">Step 4: Link to Create an Executable File<a hidden class="anchor" aria-hidden="true" href="#step-4-link-to-create-an-executable-file">#</a></h3>
+<p>Our object file <code>main.o</code> contains the machine code for our main function but it doesn&rsquo;t contain the code for the <code>printf</code> function. The linker&rsquo;s job is to find the <code>printf</code> code in the C standard library and combine it with our object file to create a runnable program</p>
+<ul>
+<li>We run the command <code>gcc main.o -o my_program</code></li>
+<li>The final executable file <code>my_program</code> is created</li>
+</ul>
+<p>In the terminal, we can now run our program</p>
+<p><code>./my_program</code></p>
+<p>The output is:</p>
+<p><code>The result is: 15</code></p>
+<h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Diing54.github.io/blog/tags/c/">C</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Diing54.github.io/blog/">Diing</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
