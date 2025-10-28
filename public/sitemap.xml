@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Diing54.github.io/blog/tags/c/</loc>
+    <loc>http://localhost:1313/blog/tags/c/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/</loc>
+    <loc>http://localhost:1313/blog/posts/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/tags/</loc>
+    <loc>http://localhost:1313/blog/tags/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</loc>
+    <loc>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/final-year-project/</loc>
+    <loc>http://localhost:1313/blog/posts/final-year-project/</loc>
     <lastmod>2025-10-07T19:44:27+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/tags/automation/</loc>
+    <loc>http://localhost:1313/blog/tags/automation/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/tags/bash/</loc>
+    <loc>http://localhost:1313/blog/tags/bash/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/created-another-script/</loc>
+    <loc>http://localhost:1313/blog/posts/created-another-script/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/tags/linux/</loc>
+    <loc>http://localhost:1313/blog/tags/linux/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/tags/devops/</loc>
+    <loc>http://localhost:1313/blog/tags/devops/</loc>
     <lastmod>2025-10-02T21:29:08+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/script-for-devops-notes/</loc>
+    <loc>http://localhost:1313/blog/posts/script-for-devops-notes/</loc>
     <lastmod>2025-10-02T21:29:08+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/posts/first-official-post/</loc>
+    <loc>http://localhost:1313/blog/posts/first-official-post/</loc>
     <lastmod>2025-10-01T21:07:08+03:00</lastmod>
   </url><url>
-    <loc>https://Diing54.github.io/blog/categories/</loc>
+    <loc>http://localhost:1313/blog/categories/</loc>
   </url><url>
-    <loc>https://Diing54.github.io/blog/search/</loc>
+    <loc>http://localhost:1313/blog/search/</loc>
   </url>
 </urlset>

@@ -15,7 +15,7 @@ theme = 'PaperMod'
   customCSS = ['css/custom.css']
   
   [params.search]
-    enable = true
+    enable = false
     type = "fuse"
   
   [params.profileMode]

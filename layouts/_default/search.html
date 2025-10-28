@@ -1,30 +1,32 @@
 {{ define "main" }}
+{{ $posts := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+
 <div class="search-page">
     <!-- Search Header -->
     <div class="search-header">
-        <h1 class="search-title">{{ i18n "search" }}</h1>
-        <p class="search-description">{{ i18n "search_description" }}</p>
+        <h1 class="search-title">Search</h1>
+        <p class="search-description">Find content across all blog posts</p>
     </div>
-    
+
     <!-- Search Box -->
     <div class="search-box-container">
-        <input 
-            class="search-input" 
-            id="search-query" 
-            name="s" 
-            type="search" 
-            placeholder="{{ i18n "search_placeholder" }}"
+        <input
+            class="search-input"
+            id="search-query"
+            name="s"
+            type="search"
+            placeholder="Type to search through all posts..."
             aria-label="Search"
             autocomplete="off"
             autofocus
         />
     </div>
-    
+
     <!-- Search Results -->
     <div id="search-results" class="search-results">
         <div class="no-results" id="default-state">
-            <h3>{{ i18n "search_start" }}</h3>
-            <p>{{ i18n "search_instructions" }}</p>
+            <h3>Start Searching</h3>
+            <p>Loaded {{ len $posts }} posts. Start typing to search!</p>
         </div>
         <div id="loading-state" class="no-results" style="display: none;">
             <h3>Searching...</h3>
@@ -35,6 +37,19 @@
             <p id="no-results-query"></p>
         </div>
     </div>
+</div>
+
+<!-- Hidden div with search data -->
+<div id="search-data" style="display: none;">
+{{ range $posts }}
+<div class="post-data"
+     data-title="{{ .Title }}"
+     data-content="{{ .Plain }}"
+     data-summary="{{ .Summary | plainify }}"
+     data-permalink="{{ .Permalink }}"
+     data-date="{{ .Date.Format "January 2, 2006" }}">
+</div>
+{{ end }}
 </div>
 
 <style>
@@ -126,6 +141,19 @@
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--secondary);
+    max-height: 4.8em; /* 3 lines max */
+    overflow: hidden;
+    position: relative;
+}
+
+.result-content:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 1.2em;
+    background: linear-gradient(to right, transparent, var(--entry) 50%);
 }
 
 .result-footer {
@@ -148,7 +176,7 @@ mark {
     .search-input {
         background: var(--theme);
     }
-    
+
     mark {
         background: var(--highlight-dark);
     }
@@ -159,11 +187,11 @@ mark {
     .search-page {
         padding: 1rem 0.5rem;
     }
-    
+
     .search-title {
         font-size: 2rem;
     }
-    
+
     .search-result {
         padding: 1rem;
     }
@@ -171,27 +199,35 @@ mark {
 </style>
 
 <script>
+// Completely override PaperMod search immediately
+window.PaperModSearchOverride = true;
+
+// Stop PaperMod search from loading
+if (typeof window.initPaperModSearch === 'function') {
+    window.initPaperModSearch = function() {};
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Custom search initialized - PaperMod search disabled');
+
     const searchInput = document.getElementById('search-query');
-    const searchResults = document.getElementById('search-results');
     const defaultState = document.getElementById('default-state');
     const loadingState = document.getElementById('loading-state');
     const resultsContainer = document.getElementById('results-container');
     const noResultsState = document.getElementById('no-results-state');
     const noResultsQuery = document.getElementById('no-results-query');
-    
-    let searchData = [];
-    let isSearching = false;
 
-    // Load search index
-    fetch('{{ "index.json" | absURL }}')
-        .then(response => response.json())
-        .then(data => {
-            searchData = data;
-        })
-        .catch(error => {
-            console.error('Error loading search index:', error);
-        });
+    // Extract search data from hidden HTML elements
+    const postElements = document.querySelectorAll('.post-data');
+    const searchData = Array.from(postElements).map(el => ({
+        title: el.getAttribute('data-title') || '',
+        content: el.getAttribute('data-content') || '',
+        summary: el.getAttribute('data-summary') || '',
+        permalink: el.getAttribute('data-permalink') || '',
+        date: el.getAttribute('data-date') || ''
+    }));
+
+    console.log('Search data loaded:', searchData.length, 'posts');
 
     function showState(state) {
         // Hide all states first
@@ -199,158 +235,195 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingState.style.display = 'none';
         resultsContainer.style.display = 'none';
         noResultsState.style.display = 'none';
-        
+
         // Show the requested state
         switch(state) {
-            case 'default':
-                defaultState.style.display = 'block';
+            case 'default': 
+                defaultState.style.display = 'block'; 
                 break;
-            case 'loading':
-                loadingState.style.display = 'block';
+            case 'loading': 
+                loadingState.style.display = 'block'; 
                 break;
-            case 'results':
-                resultsContainer.style.display = 'block';
+            case 'results': 
+                resultsContainer.style.display = 'block'; 
                 break;
-            case 'no-results':
-                noResultsState.style.display = 'block';
+            case 'no-results': 
+                noResultsState.style.display = 'block'; 
                 break;
         }
     }
 
-    function performSearch(query) {
-        if (isSearching) return;
-        isSearching = true;
+    function findTextContext(text, query, maxLines = 3) {
+        const lowerText = text.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+        const index = lowerText.indexOf(lowerQuery);
         
-        if (!searchData.length) {
-            showState('loading');
-            isSearching = false;
-            return;
+        if (index === -1) return null;
+
+        // Find the start of the line/paragraph
+        let lineStart = text.lastIndexOf('\n\n', index);
+        if (lineStart === -1) lineStart = Math.max(0, index - 100);
+        
+        // Find the end of the line/paragraph
+        let lineEnd = text.indexOf('\n\n', index);
+        if (lineEnd === -1) lineEnd = Math.min(text.length, index + 200);
+        
+        // Extract the context around the search term
+        let context = text.substring(lineStart, lineEnd).trim();
+        
+        // Split into lines and take only maxLines
+        const lines = context.split('\n');
+        let limitedContext = '';
+        let linesTaken = 0;
+        
+        for (let line of lines) {
+            if (linesTaken >= maxLines) break;
+            if (line.trim().length > 0) {
+                limitedContext += (limitedContext ? '\n' : '') + line.trim();
+                linesTaken++;
+            }
         }
         
+        // Add ellipsis if we have more content
+        if (lineStart > 0) limitedContext = '...' + limitedContext;
+        if (lineEnd < text.length) limitedContext = limitedContext + '...';
+
+        // Highlight the search term
+        limitedContext = limitedContext.replace(
+            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+            match => `<mark>${match}</mark>`
+        );
+
+        return limitedContext;
+    }
+
+    function performSearch(query) {
         if (!query.trim()) {
             showState('default');
-            isSearching = false;
             return;
         }
-        
+
         showState('loading');
-        
-        // Use setTimeout to allow UI to update before heavy computation
-        setTimeout(() => {
-            const results = [];
-            const lowerQuery = query.toLowerCase();
+
+        const results = [];
+        const lowerQuery = query.toLowerCase();
+
+        // Search through all posts
+        searchData.forEach(post => {
+            const titleMatch = post.title.toLowerCase().includes(lowerQuery);
+            const contentMatch = post.content.toLowerCase().includes(lowerQuery);
+            const summaryMatch = post.summary.toLowerCase().includes(lowerQuery);
             
-            searchData.forEach(post => {
-                let hasMatch = false;
-                let titleMatch = false;
-                const contentMatches = [];
+            if (titleMatch || contentMatch || summaryMatch) {
+                let context = '';
                 
-                // Search in title
-                if (post.title && post.title.toLowerCase().includes(lowerQuery)) {
-                    hasMatch = true;
-                    titleMatch = true;
+                if (titleMatch) {
+                    // Highlight in title and show it's a title match
+                    const highlightedTitle = post.title.replace(
+                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                        match => `<mark>${match}</mark>`
+                    );
+                    context = `<strong>Title contains "${query}"</strong>`;
+                } else if (contentMatch) {
+                    // Find context in content (max 3 lines)
+                    const contentContext = findTextContext(post.content, query, 3);
+                    if (contentContext) {
+                        context = contentContext;
+                    } else {
+                        // Fallback: show beginning of content with highlight
+                        const beginning = post.content.substring(0, 150);
+                        context = beginning.replace(
+                            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                            match => `<mark>${match}</mark>`
+                        ) + '...';
+                    }
+                } else if (summaryMatch) {
+                    // Find context in summary
+                    const summaryContext = findTextContext(post.summary, query, 2);
+                    if (summaryContext) {
+                        context = summaryContext;
+                    } else {
+                        // Fallback: show summary with highlight
+                        context = post.summary.replace(
+                            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                            match => `<mark>${match}</mark>`
+                        );
+                    }
                 }
-                
-                // Search in content with sentence extraction
-                if (post.plainContent || post.content) {
-                    const content = post.plainContent || post.content;
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = content;
-                    const decodedContent = tempDiv.textContent || tempDiv.innerText || '';
-                    
-                    const sentences = decodedContent.split(/[.!?]+/);
-                    
-                    sentences.forEach(sentence => {
-                        const cleanSentence = sentence.trim();
-                        if (cleanSentence.length > 10 && cleanSentence.toLowerCase().includes(lowerQuery)) {
-                            hasMatch = true;
-                            const highlightedSentence = highlightText(cleanSentence, query);
-                            contentMatches.push(highlightedSentence);
-                        }
-                    });
-                }
-                
-                if (hasMatch) {
-                    const displayTitle = titleMatch ? highlightText(post.title, query) : post.title;
-                    
-                    results.push({
-                        postTitle: displayTitle,
-                        postUrl: post.permalink,
-                        contentMatches: contentMatches,
-                        titleMatch: titleMatch
-                    });
-                }
-            });
-            
-            // Update UI in one operation
-            if (results.length === 0) {
-                noResultsQuery.textContent = `No results for "${query}"`;
-                showState('no-results');
-            } else {
-                let html = '';
-                
-                results.forEach((result) => {
-                    const contentDisplay = result.contentMatches.length > 0 
-                        ? result.contentMatches.slice(0, 3).join('... ')
-                        : (result.titleMatch ? 'Title matches your search' : '');
-                    
-                    html += `
-                        <div class="search-result" onclick="window.location.href='${result.postUrl}'">
-                            <div class="result-title">${result.postTitle}</div>
-                            ${contentDisplay ? `
-                            <div class="result-content">
-                                ${contentDisplay}
-                            </div>
-                            ` : ''}
-                            <div class="result-footer">Click to read full article</div>
-                        </div>
-                    `;
+
+                results.push({
+                    ...post,
+                    context: context,
+                    isTitleMatch: titleMatch
                 });
-                
-                resultsContainer.innerHTML = html;
-                showState('results');
             }
-            
-            isSearching = false;
-        }, 50); // Small delay to ensure UI updates
+        });
+
+        console.log('Found results:', results.length);
+
+        if (results.length === 0) {
+            noResultsQuery.textContent = `Searched ${searchData.length} posts - 0 results for "${query}"`;
+            showState('no-results');
+        } else {
+            let html = '';
+            results.forEach(result => {
+                // Highlight title if it's a title match
+                const displayTitle = result.isTitleMatch ? 
+                    result.title.replace(
+                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                        match => `<mark>${match}</mark>`
+                    ) : 
+                    result.title;
+                
+                html += `
+                    <div class="search-result" onclick="window.location.href='${result.permalink}'">
+                        <div class="result-title">${displayTitle}</div>
+                        <div class="result-content">${result.context}</div>
+                        <div class="result-footer">
+                            <span>${result.date}</span>
+                            <span> • Click to read full article</span>
+                        </div>
+                    </div>
+                `;
+            });
+            resultsContainer.innerHTML = html;
+            showState('results');
+        }
     }
-    
-    // Function to highlight text
-    function highlightText(text, query) {
-        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
-    }
-    
-    // Event listener with better debouncing
+
+    // Input handler with debouncing
     let searchTimeout;
-    let lastQuery = '';
-    
     searchInput.addEventListener('input', function(e) {
         const query = e.target.value.trim();
         
-        // Skip if same query or still searching
-        if (query === lastQuery || isSearching) return;
-        lastQuery = query;
-        
         clearTimeout(searchTimeout);
-        
-        if (query.length === 0) {
-            showState('default');
-            return;
-        }
-        
-        // Show loading for very fast searches, but skip for single character deletions
-        if (query.length > 1 || query.length > lastQuery.length) {
-            showState('loading');
-        }
-        
         searchTimeout = setTimeout(() => {
             performSearch(query);
-        }, 300); // Increased debounce time for smoother experience
+        }, 300);
     });
-    
-    // Focus search input on page load
+
+    // Prevent any default behavior
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+
+    searchInput.addEventListener('keyup', function(e) {
+        e.stopPropagation();
+    });
+
     searchInput.focus();
+});
+
+// Additional protection against PaperMod search
+window.addEventListener('load', function() {
+    const paperModSearchScript = document.querySelector('script[src*="search"]');
+    if (paperModSearchScript) {
+        paperModSearchScript.remove();
+    }
 });
 </script>
 {{ end }}

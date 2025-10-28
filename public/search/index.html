@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="Search - Diing">
 <meta name="author" content="">
-<link rel="canonical" href="https://Diing54.github.io/blog/search/">
+<link rel="canonical" href="http://localhost:1313/blog/search/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.aa1688e6339fb9cdf60fb826eb1256f070690680649dc91f2bd39903f51f15e3.css" integrity="sha256-qhaI5jOfuc32D7gm6xJW8HBpBoBknckfK9OZA/UfFeM=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
 <script defer crossorigin="anonymous" src="/blog/assets/js/search.2826037ddab446009aa4dc907d6f13e5fe42eaff23f43abcba31285b991e9c6d.js" integrity="sha256-KCYDfdq0RgCapNyQfW8T5f5C6v8j9Dq8ujEoW5kenG0="></script>
-<link rel="icon" href="https://Diing54.github.io/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://Diing54.github.io/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://Diing54.github.io/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://Diing54.github.io/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://Diing54.github.io/blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://Diing54.github.io/blog/search/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/search/">
 <noscript>
     <style>
         #theme-toggle,
@@ -29,189 +29,7 @@
 
     </style>
 </noscript>
-<style>
- 
-.fuse-result {
-    border-left: 3px solid var(--primary);
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    background: var(--code-bg);
-    border-radius: 4px;
-}
-
-.fuse-result:hover {
-    background: var(--code-bg);
-    transform: translateX(2px);
-    transition: all 0.2s ease;
-}
-
-.fuse-result .title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--primary);
-}
-
-.fuse-result .sentence {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-}
-
-.fuse-result .source {
-    font-size: 0.9rem;
-    color: var(--secondary);
-    font-style: italic;
-}
-
-.fuse-result mark {
-    background-color: #fff3cd;
-    color: #856404;
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
-    font-weight: 600;
-}
-
-.search-stats {
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-}
-
-.no-results {
-    text-align: center;
-    color: var(--secondary);
-    font-style: italic;
-    padding: 2rem;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-query');
-    const searchResults = document.getElementById('search-results');
-    const searchStats = document.createElement('div');
-    searchStats.className = 'search-stats';
-    
-    if (searchInput && searchResults) {
-        
-        searchResults.parentNode.insertBefore(searchStats, searchResults);
-        
-        let searchData = [];
-        
-        
-        fetch('/index.json')
-            .then(response => response.json())
-            .then(data => {
-                searchData = data;
-                searchStats.textContent = `Loaded ${data.length} posts. Start typing to search...`;
-            })
-            .catch(error => {
-                console.error('Error loading search index:', error);
-            });
-        
-        
-        function performEnhancedSearch(query) {
-            if (!query.trim()) {
-                searchStats.textContent = `Loaded ${searchData.length} posts. Start typing to search...`;
-                return;
-            }
-            
-            const results = [];
-            const lowerQuery = query.toLowerCase();
-            
-            searchData.forEach(post => {
-                
-                if (post.title && post.title.toLowerCase().includes(lowerQuery)) {
-                    const highlightedTitle = post.title.replace(
-                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-                        match => `<mark>${match}</mark>`
-                    );
-                    results.push({
-                        type: 'title',
-                        content: highlightedTitle,
-                        postTitle: post.title,
-                        postUrl: post.permalink,
-                        source: 'Title'
-                    });
-                }
-                
-                
-                if (post.content) {
-                    
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = post.content;
-                    const decodedContent = tempDiv.textContent || tempDiv.innerText || '';
-                    
-                    
-                    const sentences = decodedContent.split(/[.!?]+/);
-                    
-                    sentences.forEach(sentence => {
-                        const cleanSentence = sentence.trim();
-                        if (cleanSentence.length > 10 && cleanSentence.toLowerCase().includes(lowerQuery)) {
-                            const highlightedSentence = cleanSentence.replace(
-                                new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-                                match => `<mark>${match}</mark>`
-                            );
-                            results.push({
-                                type: 'content',
-                                content: highlightedSentence,
-                                postTitle: post.title,
-                                postUrl: post.permalink,
-                                source: 'Content'
-                            });
-                        }
-                    });
-                }
-            });
-            
-            
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="no-results">No results found for "' + query + '"</div>';
-                searchStats.textContent = `Searched ${searchData.length} posts - 0 results for "${query}"`;
-            } else {
-                let html = '';
-                results.forEach(result => {
-                    html += `
-                        <div class="fuse-result" onclick="window.location.href='${result.postUrl}'" style="cursor: pointer;">
-                            <div class="title">${result.postTitle}</div>
-                            <div class="sentence">${result.content}</div>
-                            <div class="source">Found in: ${result.source}</div>
-                        </div>
-                    `;
-                });
-                searchResults.innerHTML = html;
-                searchStats.textContent = `Found ${results.length} matches in ${searchData.length} posts for "${query}"`;
-            }
-        }
-        
-        
-        let originalInputHandler;
-        if (searchInput._hugoSearchHandler) {
-            originalInputHandler = searchInput._hugoSearchHandler;
-            searchInput.removeEventListener('input', originalInputHandler);
-        }
-        
-        
-        let searchTimeout;
-        searchInput.addEventListener('input', function(e) {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                performEnhancedSearch(e.target.value);
-            }, 150);
-        });
-        
-        
-        if (searchInput.value) {
-            performEnhancedSearch(searchInput.value);
-        }
-    }
-});
-</script>
-
-<meta property="og:url" content="https://Diing54.github.io/blog/search/">
+<meta property="og:url" content="http://localhost:1313/blog/search/">
   <meta property="og:site_name" content="Diing">
   <meta property="og:title" content="Search">
   <meta property="og:description" content="Documenting my DevOps learning journey">
@@ -231,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "@type": "ListItem",
       "position":  1 ,
       "name": "Search",
-      "item": "https://Diing54.github.io/blog/search/"
+      "item": "http://localhost:1313/blog/search/"
     }
   ]
 }
@@ -253,14 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
   "dateModified": "0001-01-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://Diing54.github.io/blog/search/"
+    "@id": "http://localhost:1313/blog/search/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Diing",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://Diing54.github.io/blog/favicon.ico"
+      "url": "http://localhost:1313/blog/favicon.ico"
     }
   }
 }
@@ -278,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://Diing54.github.io/blog/" accesskey="h" title="Diing (Alt + H)">Diing</a>
+            <a href="http://localhost:1313/blog/" accesskey="h" title="Diing (Alt + H)">Diing</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -304,22 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <ul id="menu">
             <li>
-                <a href="https://Diing54.github.io/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span class="active">Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/posts/" title="Posts">
+                <a href="http://localhost:1313/blog/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/tags/" title="Tags">
+                <a href="http://localhost:1313/blog/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/about/" title="About">
+                <a href="http://localhost:1313/blog/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -327,32 +145,34 @@ document.addEventListener('DOMContentLoaded', function() {
     </nav>
 </header>
 <main class="main">
+
+
 <div class="search-page">
     
     <div class="search-header">
-        <h1 class="search-title"></h1>
-        <p class="search-description"></p>
+        <h1 class="search-title">Search</h1>
+        <p class="search-description">Find content across all blog posts</p>
     </div>
-    
+
     
     <div class="search-box-container">
-        <input 
-            class="search-input" 
-            id="search-query" 
-            name="s" 
-            type="search" 
-            placeholder=""
+        <input
+            class="search-input"
+            id="search-query"
+            name="s"
+            type="search"
+            placeholder="Type to search through all posts..."
             aria-label="Search"
             autocomplete="off"
             autofocus
         />
     </div>
-    
+
     
     <div id="search-results" class="search-results">
         <div class="no-results" id="default-state">
-            <h3></h3>
-            <p></p>
+            <h3>Start Searching</h3>
+            <p>Loaded 5 posts. Start typing to search!</p>
         </div>
         <div id="loading-state" class="no-results" style="display: none;">
             <h3>Searching...</h3>
@@ -363,6 +183,82 @@ document.addEventListener('DOMContentLoaded', function() {
             <p id="no-results-query"></p>
         </div>
     </div>
+</div>
+
+
+<div id="search-data" style="display: none;">
+
+<div class="post-data"
+     data-title="Under the Hood of a Gcc Compiler"
+     data-content="Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:
+#include &amp;lt;stdio.h&amp;gt; int main() { int a = 10; int b = 5; int result = a &#43; b; printf(&amp;#34;The result is: %d\n&amp;#34;, result); return 0; } Step 1: Invoking the Preprocessor This is the first stage. The preprocessor finds this line, #include &amp;lt;stdio.h&amp;gt;, in order to extract the stdio.h header file and paste its entire contents into our source code main.c
+We run the command gcc -E main.c -o main.i The -E flag tells the GCC to stop after preprocessing -o main.i specifies the output file name. The .i extension is the standard for preprocessed C files Step 2: Compile to Assembly Code We take the preprocessed file and compile it to assembly language, a low-level, but still human-readable.
+We run the command gcc -S main.i -o main.s The -S flag tells the compiler/GCC to stop after compiling to assembly The output is main.s with assembly code inside Step 3: Assemble to Object Code The assembler&amp;rsquo;s job is to convert the human-readable assembly code into pure machine code (binary)
+We run the command gcc -c main.s -o main.o The -c flag tells the compiler to stop after the assembly stage The output is the object file main.o which is not yet executable Step 4: Link to Create an Executable File Our object file main.o contains the machine code for our main function but it doesn&amp;rsquo;t contain the code for the printf function. The linker&amp;rsquo;s job is to find the printf code in the C standard library and combine it with our object file to create a runnable program
+We run the command gcc main.o -o my_program The final executable file my_program is created In the terminal, we can now run our program
+./my_program
+The output is:
+The result is: 15
+References "
+     data-summary="Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:
+"
+     data-permalink="http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/"
+     data-date="October 11, 2025">
+</div>
+
+<div class="post-data"
+     data-title="Final Year Project"
+     data-content="I have been working on my final year project lately. Today, I plan to export the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.
+References "
+     data-summary="I have been working on my final year project lately. Today, I plan to export the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.
+References"
+     data-permalink="http://localhost:1313/blog/posts/final-year-project/"
+     data-date="October 7, 2025">
+</div>
+
+<div class="post-data"
+     data-title="Created Another Script"
+     data-content="Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.
+How it works
+Run blog from the command line Enter your blog title The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided It then opens the file automatically in Neovim for editing The script:
+#!/bin/bash BLOG_DIR=&amp;#34;$HOME/blog&amp;#34; cd &amp;#34;$BLOG_DIR&amp;#34; read -p &amp;#34;Enter post title: &amp;#34; title filename=$(echo &amp;#34;$title&amp;#34; | tr &amp;#39;[:upper:]&amp;#39; &amp;#39;[:lower:]&amp;#39; &amp;#39; &amp;#39; &amp;#39;-&amp;#39; | sed &amp;#39;s/[^a-z0-9-]//g&amp;#39;) hugo new &amp;#34;posts/${filename}.md&amp;#34; nvim &amp;#34;content/posts/${filename}.md&amp;#34; References "
+     data-summary="Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &ldquo;blog&rdquo;.
+How it works
+Run blog from the command line Enter your blog title The scripts automatically generates a file using Hugo&rsquo;s archetype template. The file&rsquo;s name is the title provided It then opens the file automatically in Neovim for editing The script:
+"
+     data-permalink="http://localhost:1313/blog/posts/created-another-script/"
+     data-date="October 4, 2025">
+</div>
+
+<div class="post-data"
+     data-title="Script for Devops Notes"
+     data-content="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.
+All this is done by bash scripting and an existing template which will be used in generating all the notes.
+References "
+     data-summary="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &ldquo;devops&rdquo; on my command line in any directory and I&rsquo;m prompted to enter the name of the file which will also be the title of the note.
+"
+     data-permalink="http://localhost:1313/blog/posts/script-for-devops-notes/"
+     data-date="October 2, 2025">
+</div>
+
+<div class="post-data"
+     data-title="First Official Post"
+     data-content="I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.
+&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;
+— Steve Jobs
+References "
+     data-summary="I&rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.
+&ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&rsquo;t found it yet, keep looking. Don&rsquo;t settle.&rdquo;
+— Steve Jobs
+"
+     data-permalink="http://localhost:1313/blog/posts/first-official-post/"
+     data-date="October 1, 2025">
+</div>
+
 </div>
 
 <style>
@@ -454,6 +350,19 @@ document.addEventListener('DOMContentLoaded', function() {
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--secondary);
+    max-height: 4.8em;  
+    overflow: hidden;
+    position: relative;
+}
+
+.result-content:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 1.2em;
+    background: linear-gradient(to right, transparent, var(--entry) 50%);
 }
 
 .result-footer {
@@ -476,7 +385,7 @@ mark {
     .search-input {
         background: var(--theme);
     }
-    
+
     mark {
         background: var(--highlight-dark);
     }
@@ -487,11 +396,11 @@ mark {
     .search-page {
         padding: 1rem 0.5rem;
     }
-    
+
     .search-title {
         font-size: 2rem;
     }
-    
+
     .search-result {
         padding: 1rem;
     }
@@ -499,27 +408,35 @@ mark {
 </style>
 
 <script>
+
+window.PaperModSearchOverride = true;
+
+
+if (typeof window.initPaperModSearch === 'function') {
+    window.initPaperModSearch = function() {};
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Custom search initialized - PaperMod search disabled');
+
     const searchInput = document.getElementById('search-query');
-    const searchResults = document.getElementById('search-results');
     const defaultState = document.getElementById('default-state');
     const loadingState = document.getElementById('loading-state');
     const resultsContainer = document.getElementById('results-container');
     const noResultsState = document.getElementById('no-results-state');
     const noResultsQuery = document.getElementById('no-results-query');
-    
-    let searchData = [];
-    let isSearching = false;
 
     
-    fetch('https:\/\/Diing54.github.io\/blog\/index.json')
-        .then(response => response.json())
-        .then(data => {
-            searchData = data;
-        })
-        .catch(error => {
-            console.error('Error loading search index:', error);
-        });
+    const postElements = document.querySelectorAll('.post-data');
+    const searchData = Array.from(postElements).map(el => ({
+        title: el.getAttribute('data-title') || '',
+        content: el.getAttribute('data-content') || '',
+        summary: el.getAttribute('data-summary') || '',
+        permalink: el.getAttribute('data-permalink') || '',
+        date: el.getAttribute('data-date') || ''
+    }));
+
+    console.log('Search data loaded:', searchData.length, 'posts');
 
     function showState(state) {
         
@@ -527,165 +444,202 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingState.style.display = 'none';
         resultsContainer.style.display = 'none';
         noResultsState.style.display = 'none';
-        
+
         
         switch(state) {
-            case 'default':
-                defaultState.style.display = 'block';
+            case 'default': 
+                defaultState.style.display = 'block'; 
                 break;
-            case 'loading':
-                loadingState.style.display = 'block';
+            case 'loading': 
+                loadingState.style.display = 'block'; 
                 break;
-            case 'results':
-                resultsContainer.style.display = 'block';
+            case 'results': 
+                resultsContainer.style.display = 'block'; 
                 break;
-            case 'no-results':
-                noResultsState.style.display = 'block';
+            case 'no-results': 
+                noResultsState.style.display = 'block'; 
                 break;
         }
     }
 
-    function performSearch(query) {
-        if (isSearching) return;
-        isSearching = true;
+    function findTextContext(text, query, maxLines = 3) {
+        const lowerText = text.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+        const index = lowerText.indexOf(lowerQuery);
         
-        if (!searchData.length) {
-            showState('loading');
-            isSearching = false;
-            return;
+        if (index === -1) return null;
+
+        
+        let lineStart = text.lastIndexOf('\n\n', index);
+        if (lineStart === -1) lineStart = Math.max(0, index - 100);
+        
+        
+        let lineEnd = text.indexOf('\n\n', index);
+        if (lineEnd === -1) lineEnd = Math.min(text.length, index + 200);
+        
+        
+        let context = text.substring(lineStart, lineEnd).trim();
+        
+        
+        const lines = context.split('\n');
+        let limitedContext = '';
+        let linesTaken = 0;
+        
+        for (let line of lines) {
+            if (linesTaken >= maxLines) break;
+            if (line.trim().length > 0) {
+                limitedContext += (limitedContext ? '\n' : '') + line.trim();
+                linesTaken++;
+            }
         }
         
+        
+        if (lineStart > 0) limitedContext = '...' + limitedContext;
+        if (lineEnd < text.length) limitedContext = limitedContext + '...';
+
+        
+        limitedContext = limitedContext.replace(
+            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+            match => `<mark>${match}</mark>`
+        );
+
+        return limitedContext;
+    }
+
+    function performSearch(query) {
         if (!query.trim()) {
             showState('default');
-            isSearching = false;
             return;
         }
-        
+
         showState('loading');
+
+        const results = [];
+        const lowerQuery = query.toLowerCase();
+
         
-        
-        setTimeout(() => {
-            const results = [];
-            const lowerQuery = query.toLowerCase();
+        searchData.forEach(post => {
+            const titleMatch = post.title.toLowerCase().includes(lowerQuery);
+            const contentMatch = post.content.toLowerCase().includes(lowerQuery);
+            const summaryMatch = post.summary.toLowerCase().includes(lowerQuery);
             
-            searchData.forEach(post => {
-                let hasMatch = false;
-                let titleMatch = false;
-                const contentMatches = [];
+            if (titleMatch || contentMatch || summaryMatch) {
+                let context = '';
                 
-                
-                if (post.title && post.title.toLowerCase().includes(lowerQuery)) {
-                    hasMatch = true;
-                    titleMatch = true;
+                if (titleMatch) {
+                    
+                    const highlightedTitle = post.title.replace(
+                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                        match => `<mark>${match}</mark>`
+                    );
+                    context = `<strong>Title contains "${query}"</strong>`;
+                } else if (contentMatch) {
+                    
+                    const contentContext = findTextContext(post.content, query, 3);
+                    if (contentContext) {
+                        context = contentContext;
+                    } else {
+                        
+                        const beginning = post.content.substring(0, 150);
+                        context = beginning.replace(
+                            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                            match => `<mark>${match}</mark>`
+                        ) + '...';
+                    }
+                } else if (summaryMatch) {
+                    
+                    const summaryContext = findTextContext(post.summary, query, 2);
+                    if (summaryContext) {
+                        context = summaryContext;
+                    } else {
+                        
+                        context = post.summary.replace(
+                            new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                            match => `<mark>${match}</mark>`
+                        );
+                    }
                 }
-                
-                
-                if (post.plainContent || post.content) {
-                    const content = post.plainContent || post.content;
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = content;
-                    const decodedContent = tempDiv.textContent || tempDiv.innerText || '';
-                    
-                    const sentences = decodedContent.split(/[.!?]+/);
-                    
-                    sentences.forEach(sentence => {
-                        const cleanSentence = sentence.trim();
-                        if (cleanSentence.length > 10 && cleanSentence.toLowerCase().includes(lowerQuery)) {
-                            hasMatch = true;
-                            const highlightedSentence = highlightText(cleanSentence, query);
-                            contentMatches.push(highlightedSentence);
-                        }
-                    });
-                }
-                
-                if (hasMatch) {
-                    const displayTitle = titleMatch ? highlightText(post.title, query) : post.title;
-                    
-                    results.push({
-                        postTitle: displayTitle,
-                        postUrl: post.permalink,
-                        contentMatches: contentMatches,
-                        titleMatch: titleMatch
-                    });
-                }
-            });
-            
-            
-            if (results.length === 0) {
-                noResultsQuery.textContent = `No results for "${query}"`;
-                showState('no-results');
-            } else {
-                let html = '';
-                
-                results.forEach((result) => {
-                    const contentDisplay = result.contentMatches.length > 0 
-                        ? result.contentMatches.slice(0, 3).join('... ')
-                        : (result.titleMatch ? 'Title matches your search' : '');
-                    
-                    html += `
-                        <div class="search-result" onclick="window.location.href='${result.postUrl}'">
-                            <div class="result-title">${result.postTitle}</div>
-                            ${contentDisplay ? `
-                            <div class="result-content">
-                                ${contentDisplay}
-                            </div>
-                            ` : ''}
-                            <div class="result-footer">Click to read full article</div>
-                        </div>
-                    `;
+
+                results.push({
+                    ...post,
+                    context: context,
+                    isTitleMatch: titleMatch
                 });
-                
-                resultsContainer.innerHTML = html;
-                showState('results');
             }
-            
-            isSearching = false;
-        }, 50); 
+        });
+
+        console.log('Found results:', results.length);
+
+        if (results.length === 0) {
+            noResultsQuery.textContent = `Searched ${searchData.length} posts - 0 results for "${query}"`;
+            showState('no-results');
+        } else {
+            let html = '';
+            results.forEach(result => {
+                
+                const displayTitle = result.isTitleMatch ? 
+                    result.title.replace(
+                        new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                        match => `<mark>${match}</mark>`
+                    ) : 
+                    result.title;
+                
+                html += `
+                    <div class="search-result" onclick="window.location.href='${result.permalink}'">
+                        <div class="result-title">${displayTitle}</div>
+                        <div class="result-content">${result.context}</div>
+                        <div class="result-footer">
+                            <span>${result.date}</span>
+                            <span> • Click to read full article</span>
+                        </div>
+                    </div>
+                `;
+            });
+            resultsContainer.innerHTML = html;
+            showState('results');
+        }
     }
-    
-    
-    function highlightText(text, query) {
-        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
-    }
-    
+
     
     let searchTimeout;
-    let lastQuery = '';
-    
     searchInput.addEventListener('input', function(e) {
         const query = e.target.value.trim();
         
-        
-        if (query === lastQuery || isSearching) return;
-        lastQuery = query;
-        
         clearTimeout(searchTimeout);
-        
-        if (query.length === 0) {
-            showState('default');
-            return;
-        }
-        
-        
-        if (query.length > 1 || query.length > lastQuery.length) {
-            showState('loading');
-        }
-        
         searchTimeout = setTimeout(() => {
             performSearch(query);
-        }, 300); 
+        }, 300);
     });
+
     
-    
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+
+    searchInput.addEventListener('keyup', function(e) {
+        e.stopPropagation();
+    });
+
     searchInput.focus();
+});
+
+
+window.addEventListener('load', function() {
+    const paperModSearchScript = document.querySelector('script[src*="search"]');
+    if (paperModSearchScript) {
+        paperModSearchScript.remove();
+    }
 });
 </script>
 
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://Diing54.github.io/blog/">Diing</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/blog/">Diing</a></span> · 
 
     <span>
         Powered by
