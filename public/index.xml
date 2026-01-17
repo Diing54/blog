@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Diing</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://Diing54.github.io/blog/</link>
     <description>Recent content on Diing</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 11 Oct 2025 18:06:19 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Diing54.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Under the Hood of a Gcc Compiler</title>
-      <link>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
+      <link>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
       <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
+      <guid>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
       <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;
 &lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;
 &lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Final Year Project</title>
-      <link>http://localhost:1313/blog/posts/final-year-project/</link>
+      <link>https://Diing54.github.io/blog/posts/final-year-project/</link>
       <pubDate>Tue, 07 Oct 2025 19:44:27 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/final-year-project/</guid>
+      <guid>https://Diing54.github.io/blog/posts/final-year-project/</guid>
       <description>&lt;p&gt;I have been working on my final year project lately. Today, I plan to export  the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.&lt;/p&gt;
 &lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Created Another Script</title>
-      <link>http://localhost:1313/blog/posts/created-another-script/</link>
+      <link>https://Diing54.github.io/blog/posts/created-another-script/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/created-another-script/</guid>
+      <guid>https://Diing54.github.io/blog/posts/created-another-script/</guid>
       <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -42,16 +42,16 @@
     </item>
     <item>
       <title>Script for Devops Notes</title>
-      <link>http://localhost:1313/blog/posts/script-for-devops-notes/</link>
+      <link>https://Diing54.github.io/blog/posts/script-for-devops-notes/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/script-for-devops-notes/</guid>
+      <guid>https://Diing54.github.io/blog/posts/script-for-devops-notes/</guid>
       <description>&lt;p&gt;I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.&lt;/p&gt;</description>
     </item>
     <item>
       <title>First Official Post</title>
-      <link>http://localhost:1313/blog/posts/first-official-post/</link>
+      <link>https://Diing54.github.io/blog/posts/first-official-post/</link>
       <pubDate>Wed, 01 Oct 2025 21:07:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/first-official-post/</guid>
+      <guid>https://Diing54.github.io/blog/posts/first-official-post/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
