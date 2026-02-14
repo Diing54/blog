@@ -21,8 +21,7 @@ Docker just automates the development of a container and adds other features suc
 
 I came through this post on X and its more accurate in some senses
 
-<img src="../../assets/images/screenshot-20260214-224654.png" alt="X post" width="800" />
-
+![X post](/images/screenshot-20260214-224654.png)
 
 Docker containers therefore bring a standardized portable package/image that includes everything needed to run an application including the application code. 
 

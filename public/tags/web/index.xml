@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Diing</title>
+    <link>http://localhost:1313/blog/tags/web/</link>
+    <description>Recent content in Web on Diing</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Feb 2026 23:44:04 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Https</title>
+      <link>http://localhost:1313/blog/posts/https/</link>
+      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/https/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always assumed HTTPS as &amp;ldquo;encryption&amp;rdquo; or &amp;ldquo;securing&amp;rdquo; data in a network like many of devopers out there but that&amp;rsquo;s just half of the story.&lt;/p&gt;&#xA;&lt;p&gt;HTTPS is actually two things combined:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Encryption - Securing data so that other people can&amp;rsquo;t read it.&lt;/li&gt;&#xA;&lt;li&gt;Authentication - Proving that the intended server is really who it claims to be. This is the major part of HTTPS according to my experience when I just set up HTTPS in my homelab.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here is a simple high-level explanation on how HTTPS works.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

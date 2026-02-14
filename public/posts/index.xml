@@ -1,60 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Diing</title>
-    <link>https://Diing54.github.io/blog/posts/</link>
+    <link>http://localhost:1313/blog/posts/</link>
     <description>Recent content in Posts on Diing</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Oct 2025 18:06:19 +0300</lastBuildDate>
-    <atom:link href="https://Diing54.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Feb 2026 21:27:43 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Containerization</title>
+      <link>http://localhost:1313/blog/posts/containerization/</link>
+      <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/containerization/</guid>
+      <description>&lt;p&gt;It has been a few days so far learning about containers and I&amp;rsquo;m fascinated by the advances they bring in the tech industry. Containers revolutionalized the development, testing and deployment of applications.&lt;/p&gt;&#xA;&lt;p&gt;Before containers, teams would develop applications locally on their machines and ship the application to the operations team. Developers needed to specify the dependancies together with their versions and environment configurations for this application to run successfully on other machines e.g the production servers. This would sometimes be a lot of work writing all the requirements needed for a specific application to run and on the other end, the operations team would make mistakes in configuring the environment and the app fails to run. This would lead to conflicts between the two teams with the developer saying &amp;ldquo;It was working on my end&amp;rdquo;. With containers, teams utilize an image which is a portable package which has all the requirements required to run an application and it is spun up with a container.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Https</title>
+      <link>http://localhost:1313/blog/posts/https/</link>
+      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/https/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always assumed HTTPS as &amp;ldquo;encryption&amp;rdquo; or &amp;ldquo;securing&amp;rdquo; data in a network like many of devopers out there but that&amp;rsquo;s just half of the story.&lt;/p&gt;&#xA;&lt;p&gt;HTTPS is actually two things combined:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Encryption - Securing data so that other people can&amp;rsquo;t read it.&lt;/li&gt;&#xA;&lt;li&gt;Authentication - Proving that the intended server is really who it claims to be. This is the major part of HTTPS according to my experience when I just set up HTTPS in my homelab.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here is a simple high-level explanation on how HTTPS works.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/blog/posts/homelab/</link>
+      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/homelab/</guid>
+      <description>&lt;p&gt;Its been a few days since I started a simple homelab with a raspberry PI and an old laptop lying around. The first objectives of this project have been practicing networking fundamentals such as IP addresses, subnets, DNS, and security practices such as firewalls and ssh hardening. Other concepts/experiments will build on these foundations as the homelab advances into complex stages of learning cloud native technologies.&lt;/p&gt;&#xA;&lt;p&gt;The homelab is currently hosted on github with proper documentation of what I&amp;rsquo;ve been doing in a clear structured way. I believe this is a great way of learning than endless watching of tutorials on YouTube without actions. I get my hands dirty here by experimenting different approaches and analysing the &amp;ldquo;whys&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Server</title>
+      <link>http://localhost:1313/blog/posts/a-server/</link>
+      <pubDate>Thu, 29 Jan 2026 18:28:01 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/a-server/</guid>
+      <description>&lt;p&gt;This afternoon as I was taking a break, I came across a good youtube video &lt;a href=&#34;https://youtu.be/UjCDWCeHCzY?si=CSkhZHpJHWa-IunQ&#34;&gt;here&lt;/a&gt; explaining what exactly a server is.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;A server is not just a physical computer, it&amp;rsquo;s a role that a computer takes; because any ordinary desktop computer can be set up as a server, and it doesn&amp;rsquo;t necessarily have to be a powerful computer.&amp;rdquo; - That&amp;rsquo;s a bar&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Migrated My Devops Notes to Hugo and Hextra</title>
+      <link>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</link>
+      <pubDate>Sat, 24 Jan 2026 23:37:03 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</guid>
+      <description>&lt;p&gt;Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My First Contract</title>
+      <link>http://localhost:1313/blog/posts/my-first-contract/</link>
+      <pubDate>Sat, 17 Jan 2026 13:24:25 +0300</pubDate>
+      <guid>http://localhost:1313/blog/posts/my-first-contract/</guid>
+      <description>&lt;p&gt;Recently, I crossed a major milestone, I landed my first freelance contract for a local startup NGO doing good work. They needed digital presence.&#xA;I built them a site and integrated a Content Management System that the admin can use to draft content they want to display on the website and the site builds and deploys automatically&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+    </item>
     <item>
       <title>Under the Hood of a Gcc Compiler</title>
-      <link>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
+      <link>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
       <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
-      <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;
-&lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;
-&lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
+      <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;&#xA;&lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;&#xA;&lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Final Year Project</title>
-      <link>https://Diing54.github.io/blog/posts/final-year-project/</link>
+      <link>http://localhost:1313/blog/posts/final-year-project/</link>
       <pubDate>Tue, 07 Oct 2025 19:44:27 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/posts/final-year-project/</guid>
-      <description>&lt;p&gt;I have been working on my final year project lately. Today, I plan to export  the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.&lt;/p&gt;
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+      <guid>http://localhost:1313/blog/posts/final-year-project/</guid>
+      <description>&lt;p&gt;I have been working on my final year project lately. Today, I plan to export  the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Created Another Script</title>
-      <link>https://Diing54.github.io/blog/posts/created-another-script/</link>
+      <link>http://localhost:1313/blog/posts/created-another-script/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/posts/created-another-script/</guid>
-      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;
-&lt;li&gt;Enter your blog title&lt;/li&gt;
-&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;
-&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/posts/created-another-script/</guid>
+      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;&#xA;&lt;li&gt;Enter your blog title&lt;/li&gt;&#xA;&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;&#xA;&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Script for Devops Notes</title>
-      <link>https://Diing54.github.io/blog/posts/script-for-devops-notes/</link>
+      <link>http://localhost:1313/blog/posts/script-for-devops-notes/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/posts/script-for-devops-notes/</guid>
+      <guid>http://localhost:1313/blog/posts/script-for-devops-notes/</guid>
       <description>&lt;p&gt;I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.&lt;/p&gt;</description>
     </item>
     <item>
       <title>First Official Post</title>
-      <link>https://Diing54.github.io/blog/posts/first-official-post/</link>
+      <link>http://localhost:1313/blog/posts/first-official-post/</link>
       <pubDate>Wed, 01 Oct 2025 21:07:08 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/posts/first-official-post/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;
-&lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/posts/first-official-post/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;&#xA;&lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,46 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Diing</title>
-    <link>https://Diing54.github.io/blog/tags/</link>
+    <link>http://localhost:1313/blog/tags/</link>
     <description>Recent content in Tags on Diing</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Oct 2025 18:06:19 +0300</lastBuildDate>
-    <atom:link href="https://Diing54.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Feb 2026 21:27:43 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>C</title>
-      <link>https://Diing54.github.io/blog/tags/c/</link>
-      <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/tags/c/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Automation</title>
-      <link>https://Diing54.github.io/blog/tags/automation/</link>
-      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>https://Diing54.github.io/blog/tags/bash/</link>
-      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/tags/bash/</guid>
+      <title>Docker</title>
+      <link>http://localhost:1313/blog/tags/docker/</link>
+      <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://Diing54.github.io/blog/tags/linux/</link>
+      <link>http://localhost:1313/blog/tags/linux/</link>
+      <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/blog/tags/security/</link>
+      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/blog/tags/web/</link>
+      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Career</title>
+      <link>http://localhost:1313/blog/tags/career/</link>
+      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/blog/tags/homelab/</link>
+      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:1313/blog/tags/blog/</link>
+      <pubDate>Sat, 24 Jan 2026 23:37:03 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/blog/tags/web-development/</link>
+      <pubDate>Sat, 17 Jan 2026 13:24:25 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C</title>
+      <link>http://localhost:1313/blog/tags/c/</link>
+      <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/blog/tags/automation/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/tags/linux/</guid>
+      <guid>http://localhost:1313/blog/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/blog/tags/bash/</link>
+      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
+      <guid>http://localhost:1313/blog/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Devops</title>
-      <link>https://Diing54.github.io/blog/tags/devops/</link>
+      <link>http://localhost:1313/blog/tags/devops/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>https://Diing54.github.io/blog/tags/devops/</guid>
+      <guid>http://localhost:1313/blog/tags/devops/</guid>
       <description></description>
     </item>
   </channel>
