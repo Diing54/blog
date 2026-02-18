@@ -1,6 +1,7 @@
 baseURL = 'https://Diing54.github.io/blog/'
 title = 'Diing'
 theme = 'PaperMod'
+disableKinds = ['rss']
 
 [pagination]
   pagerSize = 10
