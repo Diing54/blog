@@ -1,7 +1,7 @@
 +++
 date = '2026-03-19T15:53:16+03:00'
 draft = false
-title = 'AI in Gaming Isn\'t Slop'
+title = "AI in Gaming Isn't Slop"
 tags = ["NVIDIA","AI","DLSS","Gaming"]
 +++
 2 days ago at [NVIDIA GTC](https://www.youtube.com/live/jw_o0xr8MWU?si=tTgv8rSlWpUD9ao-), NVIDIA introduced the next evolution of its [upscaling](https://prosettings.net/blog/upscaling-technologies-explained/) and frame generation technology, DLSS 5. This faced immediate reaction and backlash from the gaming community. The community was divided. We even went at it at the Whatsapp groupchat with my friends. Critics labelled it as "AI Slop", the rendering results showcased by NVIDIA looked "horrible".
