@@ -12,7 +12,7 @@ tags = ["NVIDIA","AI","DLSS","Gaming"]
 
 - "AI will eliminate the Artist's intent" - DLSS will become another tool in the hands of Artists, this will make them enhance their creativity. Jensen even mentions that developers and artists will retain full control over how this AI technology is implemented.
 
-![Jensen Quote](/blog/images/screenshot-20260319-175045.png)
+![Jensen Quote](/images/screenshot-20260319-175045.png)
 
 > AI will not remove creativity, it will just be used as a leverage and it will speed up work
 
