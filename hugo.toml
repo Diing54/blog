@@ -1,7 +1,7 @@
-baseURL = 'https://Diing54.github.io/blog/'
+baseURL = 'https://cloudiing.com'
 title = 'Diing'
 theme = 'PaperMod'
-disableKinds = ['rss']
+# disableKinds = ['rss']
 
 [pagination]
   pagerSize = 10
