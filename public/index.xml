@@ -1,96 +1,171 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Diing</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Diing</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Feb 2026 21:27:43 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2026 20:43:16 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Current State of My Homelab: 17 Containers</title>
+      <link>http://localhost:1313/posts/current-state-of-my-homelab-17-containers/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/posts/current-state-of-my-homelab-17-containers/</guid>
+      <description>&lt;p&gt;Today, while doing my daily maintainance tasks for my homelab, I had to pause and reminisce how far I came running and managing my homelab. A year ago, this was just an idea and I was always reading about other people&amp;rsquo;s blog about their homelabs. Today, I run my own and it has become a very important part of my digital life.&lt;/p&gt;
+&lt;p&gt;My setup isn&amp;rsquo;t some massive server rack you would see on YouTube with some fancy RGB lighting. It&amp;rsquo;s a single Raspberry Pi 5 (8GB variant), sitting on my desk running debian linux. Right now, it&amp;rsquo;s spinning 17 containers and acting as the backbone for my digital life. It&amp;rsquo;s not perfect, definitely not enterprise-grade, but it is my safe playing ground for learning cloud-native infrastructure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thinking About Podman (My Docker Daemon Crashed)</title>
+      <link>http://localhost:1313/posts/thinking-about-podman-my-docker-daemon-crashed/</link>
+      <pubDate>Tue, 19 May 2026 20:08:40 +0300</pubDate>
+      <guid>http://localhost:1313/posts/thinking-about-podman-my-docker-daemon-crashed/</guid>
+      <description>&lt;p&gt;A couple of days ago, my homelab infrastructure went down. Running &lt;code&gt;docker ps&lt;/code&gt; and seeing nothing. This happened on my Raspberry Pi that was running 11 containers that crashed with exit code 139. At this exact moment, I assumed a reboot or an Out-of-Memory (OOM) might have caused the issue. I checked the uptime of the hardware and there were no reboots at the time the containers crashed. Ram usage was normal too.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scaling My Homelab</title>
+      <link>http://localhost:1313/posts/scaling-my-homelab/</link>
+      <pubDate>Sat, 25 Apr 2026 11:31:26 +0300</pubDate>
+      <guid>http://localhost:1313/posts/scaling-my-homelab/</guid>
+      <description>&lt;p&gt;In my last post, I wrote how I containerized this blog application. Previously, I used GitHub pages to serve it but now it exists as an artifact and needs a container runtime for it to run. I decided to deploy it on my Raspberry Pi. To expose it to the internet, I registered a domain via Cloudflare and configured a &lt;a href=&#34;https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/&#34;&gt;Cloudflare Tunnel&lt;/a&gt; which routes traffic down to my infrastructure securely without exposing any ports.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dockerized My Blog Setup</title>
+      <link>http://localhost:1313/posts/dockerized-my-blog-setup/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/dockerized-my-blog-setup/</guid>
+      <description>&lt;p&gt;After finishing a comprehensive Docker course, I felt comfortable with container primitives and the security practices around it.&lt;/p&gt;
+&lt;p&gt;But tutorials only get you so far. To internalize these concepts and deepen my understanding, I decided to containerize my personal blog.&lt;/p&gt;
+&lt;p&gt;My blog is already built with &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;Hugo&lt;/a&gt; and uses the Papermod theme. Before, I just relied on a standard GitHub Action that compiled the static site and deployed it directly to GitHub Pages and it worked perfectly fine.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stop Running Docker Containers as Root</title>
+      <link>http://localhost:1313/posts/stop-running-docker-containers-as-root/</link>
+      <pubDate>Tue, 14 Apr 2026 11:48:47 +0300</pubDate>
+      <guid>http://localhost:1313/posts/stop-running-docker-containers-as-root/</guid>
+      <description>&lt;p&gt;You&amp;rsquo;ve probably been running containers the wrong way like me a while ago but still don&amp;rsquo;t know it yet. Processes inside a container run as &lt;code&gt;root&lt;/code&gt; user by default. Here is why this is a security risk and how to fix it.&lt;/p&gt;
+&lt;h2 id=&#34;shared-kernel&#34;&gt;Shared Kernel&lt;/h2&gt;
+&lt;p&gt;Unlike Virtual Machines, Docker containers share your host machine&amp;rsquo;s kernel. The &lt;code&gt;root&lt;/code&gt; user inside your container is basically the same &lt;code&gt;root&lt;/code&gt; user on your actual computer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI in Gaming Isn&#39;t Slop</title>
+      <link>http://localhost:1313/posts/ai-in-gaming-isnt-slop/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/posts/ai-in-gaming-isnt-slop/</guid>
+      <description>&lt;p&gt;2 days ago at &lt;a href=&#34;https://www.youtube.com/live/jw_o0xr8MWU?si=tTgv8rSlWpUD9ao-&#34;&gt;NVIDIA GTC&lt;/a&gt;, NVIDIA introduced the next evolution of its &lt;a href=&#34;https://prosettings.net/blog/upscaling-technologies-explained/&#34;&gt;upscaling&lt;/a&gt; and frame generation technology, DLSS 5. This faced immediate reaction and backlash from the gaming community. The community was divided. We even went at it at the Whatsapp groupchat with my friends. Critics labelled it as &amp;ldquo;AI Slop&amp;rdquo;, the rendering results showcased by NVIDIA looked &amp;ldquo;horrible&amp;rdquo;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;From what I noted, this is just a deeper debate on Engineering vs Artistry&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing My Dns Server That Was Crashing on Boot</title>
+      <link>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</link>
+      <pubDate>Wed, 18 Feb 2026 20:21:44 +0300</pubDate>
+      <guid>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</guid>
+      <description>&lt;p&gt;I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi&amp;rsquo;s IP for incoming DNS requests. If I restarted the service manually &lt;code&gt;systemctl restart dnsmasq&lt;/code&gt;, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi&amp;rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command &lt;code&gt;ssh astro@prod.homelab&lt;/code&gt; could not work since the client machine could not resolve the name &lt;code&gt;prod.homelab&lt;/code&gt;. I had to ssh using the IP Address.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Containerization</title>
-      <link>http://localhost:1313/blog/posts/containerization/</link>
+      <link>http://localhost:1313/posts/containerization/</link>
       <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/containerization/</guid>
-      <description>&lt;p&gt;It has been a few days so far learning about containers and I&amp;rsquo;m fascinated by the advances they bring in the tech industry. Containers revolutionalized the development, testing and deployment of applications.&lt;/p&gt;&#xA;&lt;p&gt;Before containers, teams would develop applications locally on their machines and ship the application to the operations team. Developers needed to specify the dependancies together with their versions and environment configurations for this application to run successfully on other machines e.g the production servers. This would sometimes be a lot of work writing all the requirements needed for a specific application to run and on the other end, the operations team would make mistakes in configuring the environment and the app fails to run. This would lead to conflicts between the two teams with the developer saying &amp;ldquo;It was working on my end&amp;rdquo;. With containers, teams utilize an image which is a portable package which has all the requirements required to run an application and it is spun up with a container.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/containerization/</guid>
+      <description>&lt;p&gt;It has been a few days so far learning about containers and I&amp;rsquo;m fascinated by the advances they bring in the tech industry. Containers revolutionalized the development, testing and deployment of applications.&lt;/p&gt;
+&lt;p&gt;Before containers, teams would develop applications locally on their machines and ship the application to the operations team. Developers needed to specify the dependancies together with their versions and environment configurations for this application to run successfully on other machines e.g the production servers. This would sometimes be a lot of work writing all the requirements needed for a specific application to run and on the other end, the operations team would make mistakes in configuring the environment and the app fails to run. This would lead to conflicts between the two teams with the developer saying &amp;ldquo;It was working on my end&amp;rdquo;. With containers, teams utilize an image which is a portable package which has all the requirements required to run an application and it is spun up with a container.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Https</title>
-      <link>http://localhost:1313/blog/posts/https/</link>
+      <link>http://localhost:1313/posts/https/</link>
       <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/https/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve always assumed HTTPS as &amp;ldquo;encryption&amp;rdquo; or &amp;ldquo;securing&amp;rdquo; data in a network like many of devopers out there but that&amp;rsquo;s just half of the story.&lt;/p&gt;&#xA;&lt;p&gt;HTTPS is actually two things combined:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Encryption - Securing data so that other people can&amp;rsquo;t read it.&lt;/li&gt;&#xA;&lt;li&gt;Authentication - Proving that the intended server is really who it claims to be. This is the major part of HTTPS according to my experience when I just set up HTTPS in my homelab.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here is a simple high-level explanation on how HTTPS works.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/https/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always assumed HTTPS as &amp;ldquo;encryption&amp;rdquo; or &amp;ldquo;securing&amp;rdquo; data in a network like many of devopers out there but that&amp;rsquo;s just half of the story.&lt;/p&gt;
+&lt;p&gt;HTTPS is actually two things combined:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Encryption - Securing data so that other people can&amp;rsquo;t read it.&lt;/li&gt;
+&lt;li&gt;Authentication - Proving that the intended server is really who it claims to be. This is the major part of HTTPS according to my experience when I just set up HTTPS in my homelab.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here is a simple high-level explanation on how HTTPS works.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Homelab</title>
-      <link>http://localhost:1313/blog/posts/homelab/</link>
+      <link>http://localhost:1313/posts/homelab/</link>
       <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/homelab/</guid>
-      <description>&lt;p&gt;Its been a few days since I started a simple homelab with a raspberry PI and an old laptop lying around. The first objectives of this project have been practicing networking fundamentals such as IP addresses, subnets, DNS, and security practices such as firewalls and ssh hardening. Other concepts/experiments will build on these foundations as the homelab advances into complex stages of learning cloud native technologies.&lt;/p&gt;&#xA;&lt;p&gt;The homelab is currently hosted on github with proper documentation of what I&amp;rsquo;ve been doing in a clear structured way. I believe this is a great way of learning than endless watching of tutorials on YouTube without actions. I get my hands dirty here by experimenting different approaches and analysing the &amp;ldquo;whys&amp;rdquo;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/homelab/</guid>
+      <description>&lt;p&gt;Its been a few days since I started a simple homelab with a raspberry PI and an old laptop lying around. The first objectives of this project have been practicing networking fundamentals such as IP addresses, subnets, DNS, and security practices such as firewalls and ssh hardening. Other concepts/experiments will build on these foundations as the homelab advances into complex stages of learning cloud native technologies.&lt;/p&gt;
+&lt;p&gt;The homelab is currently hosted on github with proper documentation of what I&amp;rsquo;ve been doing in a clear structured way. I believe this is a great way of learning than endless watching of tutorials on YouTube without actions. I get my hands dirty here by experimenting different approaches and analysing the &amp;ldquo;whys&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Server</title>
-      <link>http://localhost:1313/blog/posts/a-server/</link>
+      <link>http://localhost:1313/posts/a-server/</link>
       <pubDate>Thu, 29 Jan 2026 18:28:01 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/a-server/</guid>
-      <description>&lt;p&gt;This afternoon as I was taking a break, I came across a good youtube video &lt;a href=&#34;https://youtu.be/UjCDWCeHCzY?si=CSkhZHpJHWa-IunQ&#34;&gt;here&lt;/a&gt; explaining what exactly a server is.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;A server is not just a physical computer, it&amp;rsquo;s a role that a computer takes; because any ordinary desktop computer can be set up as a server, and it doesn&amp;rsquo;t necessarily have to be a powerful computer.&amp;rdquo; - That&amp;rsquo;s a bar&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+      <guid>http://localhost:1313/posts/a-server/</guid>
+      <description>&lt;p&gt;This afternoon as I was taking a break, I came across a good youtube video &lt;a href=&#34;https://youtu.be/UjCDWCeHCzY?si=CSkhZHpJHWa-IunQ&#34;&gt;here&lt;/a&gt; explaining what exactly a server is.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;A server is not just a physical computer, it&amp;rsquo;s a role that a computer takes; because any ordinary desktop computer can be set up as a server, and it doesn&amp;rsquo;t necessarily have to be a powerful computer.&amp;rdquo; - That&amp;rsquo;s a bar&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Migrated My Devops Notes to Hugo and Hextra</title>
-      <link>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</link>
+      <link>http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/</link>
       <pubDate>Sat, 24 Jan 2026 23:37:03 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</guid>
-      <description>&lt;p&gt;Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/</guid>
+      <description>&lt;p&gt;Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.&lt;/p&gt;
+&lt;p&gt;The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Contract</title>
-      <link>http://localhost:1313/blog/posts/my-first-contract/</link>
+      <link>http://localhost:1313/posts/my-first-contract/</link>
       <pubDate>Sat, 17 Jan 2026 13:24:25 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/my-first-contract/</guid>
-      <description>&lt;p&gt;Recently, I crossed a major milestone, I landed my first freelance contract for a local startup NGO doing good work. They needed digital presence.&#xA;I built them a site and integrated a Content Management System that the admin can use to draft content they want to display on the website and the site builds and deploys automatically&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+      <guid>http://localhost:1313/posts/my-first-contract/</guid>
+      <description>&lt;p&gt;Recently, I crossed a major milestone, I landed my first freelance contract for a local startup NGO doing good work. They needed digital presence.
+I built them a site and integrated a Content Management System that the admin can use to draft content they want to display on the website and the site builds and deploys automatically&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Under the Hood of a Gcc Compiler</title>
-      <link>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</link>
+      <link>http://localhost:1313/posts/under-the-hood-of-a-gcc-compiler/</link>
       <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</guid>
-      <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;&#xA;&lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;&#xA;&lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/under-the-hood-of-a-gcc-compiler/</guid>
+      <description>&lt;p&gt;Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?&lt;/p&gt;
+&lt;p&gt;I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.&lt;/p&gt;
+&lt;p&gt;I created a simple file &lt;code&gt;main.c&lt;/code&gt; below:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Final Year Project</title>
-      <link>http://localhost:1313/blog/posts/final-year-project/</link>
+      <link>http://localhost:1313/posts/final-year-project/</link>
       <pubDate>Tue, 07 Oct 2025 19:44:27 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/final-year-project/</guid>
-      <description>&lt;p&gt;I have been working on my final year project lately. Today, I plan to export  the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.&lt;/p&gt;&#xA;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
+      <guid>http://localhost:1313/posts/final-year-project/</guid>
+      <description>&lt;p&gt;I have been working on my final year project lately. Today, I plan to export  the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Created Another Script</title>
-      <link>http://localhost:1313/blog/posts/created-another-script/</link>
+      <link>http://localhost:1313/posts/created-another-script/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/created-another-script/</guid>
-      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;&#xA;&lt;li&gt;Enter your blog title&lt;/li&gt;&#xA;&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;&#xA;&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/created-another-script/</guid>
+      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;
+&lt;li&gt;Enter your blog title&lt;/li&gt;
+&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;
+&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Script for Devops Notes</title>
-      <link>http://localhost:1313/blog/posts/script-for-devops-notes/</link>
+      <link>http://localhost:1313/posts/script-for-devops-notes/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/script-for-devops-notes/</guid>
+      <guid>http://localhost:1313/posts/script-for-devops-notes/</guid>
       <description>&lt;p&gt;I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.&lt;/p&gt;</description>
     </item>
     <item>
       <title>First Official Post</title>
-      <link>http://localhost:1313/blog/posts/first-official-post/</link>
+      <link>http://localhost:1313/posts/first-official-post/</link>
       <pubDate>Wed, 01 Oct 2025 21:07:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/first-official-post/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;&#xA;&lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Search</title>
-      <link>http://localhost:1313/blog/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/search/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/first-official-post/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle.&amp;rdquo;&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;— Steve Jobs&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

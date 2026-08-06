@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Fixing My Dns Server That Was Crashing on Boot | Diing</title>
+<meta name="keywords" content="homelab, linux, networking">
+<meta name="description" content="I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi&rsquo;s IP for incoming DNS requests. If I restarted the service manually systemctl restart dnsmasq, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi&rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command ssh astro@prod.homelab could not work since the client machine could not resolve the name prod.homelab. I had to ssh using the IP Address.">
+<meta name="author" content="Diing Garang">
+<link rel="canonical" href="http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1fe024585d71fe7cb491af907f5e4879d239c133a8aca776238323d7da930192.css" integrity="sha256-H&#43;AkWF1x/ny0ka&#43;Qf15IedI5wTOorKd2I4Mj19qTAZI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script>
+<meta property="og:url" content="http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/">
+  <meta property="og:site_name" content="Diing">
+  <meta property="og:title" content="Fixing My Dns Server That Was Crashing on Boot">
+  <meta property="og:description" content="I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi’s IP for incoming DNS requests. If I restarted the service manually systemctl restart dnsmasq, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi’s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command ssh astro@prod.homelab could not work since the client machine could not resolve the name prod.homelab. I had to ssh using the IP Address.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-18T20:21:44+03:00">
+    <meta property="article:modified_time" content="2026-02-18T20:21:44+03:00">
+    <meta property="article:tag" content="Homelab">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Networking">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fixing My Dns Server That Was Crashing on Boot">
+  <meta name="twitter:description" content="I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi’s IP for incoming DNS requests. If I restarted the service manually systemctl restart dnsmasq, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi’s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command ssh astro@prod.homelab could not work since the client machine could not resolve the name prod.homelab. I had to ssh using the IP Address.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Fixing My Dns Server That Was Crashing on Boot",
+      "item": "http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fixing My Dns Server That Was Crashing on Boot",
+  "name": "Fixing My Dns Server That Was Crashing on Boot",
+  "description": "I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi\u0026rsquo;s IP for incoming DNS requests. If I restarted the service manually systemctl restart dnsmasq, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi\u0026rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command ssh astro@prod.homelab could not work since the client machine could not resolve the name prod.homelab. I had to ssh using the IP Address.\n",
+  "keywords": [
+    "homelab", "linux", "networking"
+  ],
+  "articleBody": "I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi’s IP for incoming DNS requests. If I restarted the service manually systemctl restart dnsmasq, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi’s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command ssh astro@prod.homelab could not work since the client machine could not resolve the name prod.homelab. I had to ssh using the IP Address.\nThe Problem Checking the status with systemctl status dnsmasq showed this error;\ndnsmasq: failed to create listening socket for 192.168.100.56: Cannot assign requested address FAILED to start up systemd[1]: dnsmasq.service: Failed with result 'exit-code'. This was when I noticed the issue was about a race condition between the networking system and the dnsmasq service.\nMy config for the dnsmasq service used listen-address=192.168.100.56 and when the Pi boots, dnsmasq service starts immediately and tries to bind the IP address it has been instructed to. By this time, my Pi hasn’t yet been assigned an IP by the router (I configured Router-based static IP assignment) and the dnsmasq service crashes. The IP assignment was slower than the dnsmasq service.\nThe Fix Instead of binding to a specific IP address which I used before (listen-address=192.168.100.56), the solution was to bind the interface and use the bind-dynamic directive. This tells the dnsmasq service to start up successfully even if the network isn’t yet ready, and just wait for the interface to come online.\n# OLD (Caused the crash) # listen-address=127.0.0.1,192.168.100.56 # NEW (The Fix) # Listen on local machine and the WiFi adapter interface=lo interface=wlan0 bind-dynamic The service now starts successfully after a quick reboot.\nReferences ",
+  "wordCount" : "305",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T20:21:44+03:00",
+  "dateModified": "2026-02-18T20:21:44+03:00",
+  "author":{
+    "@type": "Person",
+    "name": "Diing Garang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Diing",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Diing (Alt + H)">Diing</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Fixing My Dns Server That Was Crashing on Boot
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-02-18 20:21:44 +0300 EAT'>February 18, 2026</span>&nbsp;·&nbsp;<span>Diing Garang</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi&rsquo;s IP for incoming DNS requests. If I restarted the service manually <code>systemctl restart dnsmasq</code>, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi&rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command <code>ssh astro@prod.homelab</code> could not work since the client machine could not resolve the name <code>prod.homelab</code>. I had to ssh using the IP Address.</p>
+<h2 id="the-problem">The Problem<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h2>
+<p>Checking the status with <code>systemctl status dnsmasq</code> showed this error;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dnsmasq: failed to create listening socket for 192.168.100.56: Cannot assign requested address
+</span></span><span style="display:flex;"><span>FAILED to start up
+</span></span><span style="display:flex;"><span>systemd[1]: dnsmasq.service: Failed with result &#39;exit-code&#39;.
+</span></span></code></pre></div><p>This was when I noticed the issue was about a race condition between the networking system and the dnsmasq service.</p>
+<p>My config for the dnsmasq service used <code>listen-address=192.168.100.56</code> and when the Pi boots, dnsmasq service starts immediately and tries to bind the IP address it has been instructed to. By this time, my Pi hasn&rsquo;t yet been assigned an IP by the router (I configured Router-based static IP assignment) and the dnsmasq service crashes. The IP assignment was slower than the dnsmasq service.</p>
+<h2 id="the-fix">The Fix<a hidden class="anchor" aria-hidden="true" href="#the-fix">#</a></h2>
+<p>Instead of binding to a specific IP address which I used before (<code>listen-address=192.168.100.56</code>), the solution was to bind the interface and use the <code>bind-dynamic</code> directive. This tells the dnsmasq service to start up successfully even if the network isn&rsquo;t yet ready, and just wait for the interface to come online.</p>
+<pre tabindex="0"><code class="language-dnsmasq" data-lang="dnsmasq"># OLD (Caused the crash)
+# listen-address=127.0.0.1,192.168.100.56
+
+# NEW (The Fix)
+# Listen on local machine and the WiFi adapter
+interface=lo
+interface=wlan0
+
+bind-dynamic
+</code></pre><p>The service now starts successfully after a quick reboot.</p>
+<h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/homelab/">Homelab</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/networking/">Networking</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Diing</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

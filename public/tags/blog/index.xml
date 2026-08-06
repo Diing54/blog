@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on Diing</title>
-    <link>http://localhost:1313/blog/tags/blog/</link>
+    <link>http://localhost:1313/tags/blog/</link>
     <description>Recent content in Blog on Diing</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Jan 2026 23:37:03 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 14:04:35 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerized My Blog Setup</title>
+      <link>http://localhost:1313/posts/dockerized-my-blog-setup/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/dockerized-my-blog-setup/</guid>
+      <description>&lt;p&gt;After finishing a comprehensive Docker course, I felt comfortable with container primitives and the security practices around it.&lt;/p&gt;
+&lt;p&gt;But tutorials only get you so far. To internalize these concepts and deepen my understanding, I decided to containerize my personal blog.&lt;/p&gt;
+&lt;p&gt;My blog is already built with &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;Hugo&lt;/a&gt; and uses the Papermod theme. Before, I just relied on a standard GitHub Action that compiled the static site and deployed it directly to GitHub Pages and it worked perfectly fine.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Migrated My Devops Notes to Hugo and Hextra</title>
-      <link>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</link>
+      <link>http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/</link>
       <pubDate>Sat, 24 Jan 2026 23:37:03 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</guid>
-      <description>&lt;p&gt;Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/</guid>
+      <description>&lt;p&gt;Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.&lt;/p&gt;
+&lt;p&gt;The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

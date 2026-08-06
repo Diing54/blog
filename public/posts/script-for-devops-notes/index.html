@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Script for Devops Notes | Diing</title>
 <meta name="keywords" content="automation, devops, bash">
 <meta name="description" content="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &ldquo;devops&rdquo; on my command line in any directory and I&rsquo;m prompted to enter the name of the file which will also be the title of the note.">
-<meta name="author" content="">
-<link rel="canonical" href="https://Diing54.github.io/blog/posts/script-for-devops-notes/">
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.aa1688e6339fb9cdf60fb826eb1256f070690680649dc91f2bd39903f51f15e3.css" integrity="sha256-qhaI5jOfuc32D7gm6xJW8HBpBoBknckfK9OZA/UfFeM=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://Diing54.github.io/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://Diing54.github.io/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://Diing54.github.io/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://Diing54.github.io/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://Diing54.github.io/blog/safari-pinned-tab.svg">
+<meta name="author" content="Diing Garang">
+<link rel="canonical" href="http://localhost:1313/posts/script-for-devops-notes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1fe024585d71fe7cb491af907f5e4879d239c133a8aca776238323d7da930192.css" integrity="sha256-H&#43;AkWF1x/ny0ka&#43;Qf15IedI5wTOorKd2I4Mj19qTAZI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://Diing54.github.io/blog/posts/script-for-devops-notes/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/script-for-devops-notes/">
 <noscript>
     <style>
         #theme-toggle,
@@ -28,7 +28,13 @@
 
     </style>
 </noscript>
-<meta property="og:url" content="https://Diing54.github.io/blog/posts/script-for-devops-notes/">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script>
+<meta property="og:url" content="http://localhost:1313/posts/script-for-devops-notes/">
   <meta property="og:site_name" content="Diing">
   <meta property="og:title" content="Script for Devops Notes">
   <meta property="og:description" content="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type “devops” on my command line in any directory and I’m prompted to enter the name of the file which will also be the title of the note.">
@@ -40,9 +46,10 @@
     <meta property="article:tag" content="Automation">
     <meta property="article:tag" content="Devops">
     <meta property="article:tag" content="Bash">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Script for Devops Notes">
-<meta name="twitter:description" content="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &ldquo;devops&rdquo; on my command line in any directory and I&rsquo;m prompted to enter the name of the file which will also be the title of the note.">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Script for Devops Notes">
+  <meta name="twitter:description" content="I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type “devops” on my command line in any directory and I’m prompted to enter the name of the file which will also be the title of the note.">
 
 
 <script type="application/ld+json">
@@ -54,13 +61,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://Diing54.github.io/blog/posts/"
+      "item": "http://localhost:1313/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Script for Devops Notes",
-      "item": "https://Diing54.github.io/blog/posts/script-for-devops-notes/"
+      "item": "http://localhost:1313/posts/script-for-devops-notes/"
     }
   ]
 }
@@ -80,42 +87,38 @@
   "inLanguage": "en",
   "datePublished": "2025-10-02T21:29:08+03:00",
   "dateModified": "2025-10-02T21:29:08+03:00",
+  "author":{
+    "@type": "Person",
+    "name": "Diing Garang"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://Diing54.github.io/blog/posts/script-for-devops-notes/"
+    "@id": "http://localhost:1313/posts/script-for-devops-notes/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Diing",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://Diing54.github.io/blog/favicon.ico"
+      "url": "http://localhost:1313/favicon.ico"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
-            <a href="https://Diing54.github.io/blog/" accesskey="h" title="Diing (Alt + H)">Diing</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Diing (Alt + H)">Diing</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -131,24 +134,24 @@
                 </button>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
-                <a href="https://Diing54.github.io/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://Diing54.github.io/blog/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -163,11 +166,13 @@
     <h1 class="post-title entry-hint-parent">
       Script for Devops Notes
     </h1>
-    <div class="post-meta"><span title='2025-10-02 21:29:08 +0300 EAT'>October 2, 2025</span>
+    <div class="post-meta">
+
+<span title='2025-10-02 21:29:08 +0300 EAT'>October 2, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &ldquo;devops&rdquo; on my command line in any directory and I&rsquo;m prompted to enter the name of the file which will also be the title of the note.</p>
+  <div class="post-content md-content"><p>I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &ldquo;devops&rdquo; on my command line in any directory and I&rsquo;m prompted to enter the name of the file which will also be the title of the note.</p>
 <p>All this is done by bash scripting and an existing template which will be used in generating all the notes.</p>
 <h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
 
@@ -176,33 +181,42 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://Diing54.github.io/blog/tags/automation/">Automation</a></li>
-      <li><a href="https://Diing54.github.io/blog/tags/devops/">Devops</a></li>
-      <li><a href="https://Diing54.github.io/blog/tags/bash/">Bash</a></li>
+      <li><a href="http://localhost:1313/tags/automation/">Automation</a></li>
+      <li><a href="http://localhost:1313/tags/devops/">Devops</a></li>
+      <li><a href="http://localhost:1313/tags/bash/">Bash</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://Diing54.github.io/blog/">Diing</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Diing</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -229,25 +243,25 @@
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

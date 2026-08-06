@@ -1,95 +1,158 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Diing</title>
-    <link>http://localhost:1313/blog/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Diing</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Feb 2026 21:27:43 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2026 20:43:16 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Containers</title>
+      <link>http://localhost:1313/tags/containers/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/containers/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/blog/tags/docker/</link>
-      <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/blog/tags/linux/</link>
-      <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/blog/tags/security/</link>
-      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web</title>
-      <link>http://localhost:1313/blog/tags/web/</link>
-      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/web/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Career</title>
-      <link>http://localhost:1313/blog/tags/career/</link>
-      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/career/</guid>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Homelab</title>
-      <link>http://localhost:1313/blog/tags/homelab/</link>
-      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/homelab/</guid>
+      <link>http://localhost:1313/tags/homelab/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/homelab/</guid>
       <description></description>
     </item>
     <item>
-      <title>Blog</title>
-      <link>http://localhost:1313/blog/tags/blog/</link>
-      <pubDate>Sat, 24 Jan 2026 23:37:03 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/blog/</guid>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>Web Development</title>
-      <link>http://localhost:1313/blog/tags/web-development/</link>
-      <pubDate>Sat, 17 Jan 2026 13:24:25 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/web-development/</guid>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
-      <title>C</title>
-      <link>http://localhost:1313/blog/tags/c/</link>
-      <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/c/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Automation</title>
-      <link>http://localhost:1313/blog/tags/automation/</link>
-      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>http://localhost:1313/blog/tags/bash/</link>
-      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/bash/</guid>
+      <title>Podman</title>
+      <link>http://localhost:1313/tags/podman/</link>
+      <pubDate>Tue, 19 May 2026 20:08:40 +0300</pubDate>
+      <guid>http://localhost:1313/tags/podman/</guid>
       <description></description>
     </item>
     <item>
       <title>Devops</title>
-      <link>http://localhost:1313/blog/tags/devops/</link>
-      <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tags/devops/</guid>
+      <link>http://localhost:1313/tags/devops/</link>
+      <pubDate>Sat, 25 Apr 2026 11:31:26 +0300</pubDate>
+      <guid>http://localhost:1313/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitOps</title>
+      <link>http://localhost:1313/tags/gitops/</link>
+      <pubDate>Sat, 25 Apr 2026 11:31:26 +0300</pubDate>
+      <guid>http://localhost:1313/tags/gitops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:1313/tags/blog/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ci/Cd</title>
+      <link>http://localhost:1313/tags/ci/cd/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DLSS</title>
+      <link>http://localhost:1313/tags/dlss/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/dlss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gaming</title>
+      <link>http://localhost:1313/tags/gaming/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/gaming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NVIDIA</title>
+      <link>http://localhost:1313/tags/nvidia/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/tags/nvidia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/tags/networking/</link>
+      <pubDate>Wed, 18 Feb 2026 20:21:44 +0300</pubDate>
+      <guid>http://localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Sun, 08 Feb 2026 23:44:04 +0300</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Career</title>
+      <link>http://localhost:1313/tags/career/</link>
+      <pubDate>Thu, 05 Feb 2026 00:30:26 +0300</pubDate>
+      <guid>http://localhost:1313/tags/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sat, 17 Jan 2026 13:24:25 +0300</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C</title>
+      <link>http://localhost:1313/tags/c/</link>
+      <pubDate>Sat, 11 Oct 2025 18:06:19 +0300</pubDate>
+      <guid>http://localhost:1313/tags/c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/tags/bash/</link>
+      <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
   </channel>

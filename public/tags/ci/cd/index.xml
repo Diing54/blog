@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ci/Cd on Diing</title>
+    <link>http://localhost:1313/tags/ci/cd/</link>
+    <description>Recent content in Ci/Cd on Diing</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Apr 2026 14:04:35 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerized My Blog Setup</title>
+      <link>http://localhost:1313/posts/dockerized-my-blog-setup/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/dockerized-my-blog-setup/</guid>
+      <description>&lt;p&gt;After finishing a comprehensive Docker course, I felt comfortable with container primitives and the security practices around it.&lt;/p&gt;
+&lt;p&gt;But tutorials only get you so far. To internalize these concepts and deepen my understanding, I decided to containerize my personal blog.&lt;/p&gt;
+&lt;p&gt;My blog is already built with &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;Hugo&lt;/a&gt; and uses the Papermod theme. Before, I just relied on a standard GitHub Action that compiled the static site and deployed it directly to GitHub Pages and it worked perfectly fine.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

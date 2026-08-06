@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Devops on Diing</title>
-    <link>http://localhost:1313/blog/tags/devops/</link>
+    <link>http://localhost:1313/tags/devops/</link>
     <description>Recent content in Devops on Diing</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Oct 2025 21:29:08 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Apr 2026 11:31:26 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scaling My Homelab</title>
+      <link>http://localhost:1313/posts/scaling-my-homelab/</link>
+      <pubDate>Sat, 25 Apr 2026 11:31:26 +0300</pubDate>
+      <guid>http://localhost:1313/posts/scaling-my-homelab/</guid>
+      <description>&lt;p&gt;In my last post, I wrote how I containerized this blog application. Previously, I used GitHub pages to serve it but now it exists as an artifact and needs a container runtime for it to run. I decided to deploy it on my Raspberry Pi. To expose it to the internet, I registered a domain via Cloudflare and configured a &lt;a href=&#34;https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/&#34;&gt;Cloudflare Tunnel&lt;/a&gt; which routes traffic down to my infrastructure securely without exposing any ports.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dockerized My Blog Setup</title>
+      <link>http://localhost:1313/posts/dockerized-my-blog-setup/</link>
+      <pubDate>Sun, 19 Apr 2026 14:04:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/dockerized-my-blog-setup/</guid>
+      <description>&lt;p&gt;After finishing a comprehensive Docker course, I felt comfortable with container primitives and the security practices around it.&lt;/p&gt;
+&lt;p&gt;But tutorials only get you so far. To internalize these concepts and deepen my understanding, I decided to containerize my personal blog.&lt;/p&gt;
+&lt;p&gt;My blog is already built with &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;Hugo&lt;/a&gt; and uses the Papermod theme. Before, I just relied on a standard GitHub Action that compiled the static site and deployed it directly to GitHub Pages and it worked perfectly fine.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Script for Devops Notes</title>
-      <link>http://localhost:1313/blog/posts/script-for-devops-notes/</link>
+      <link>http://localhost:1313/posts/script-for-devops-notes/</link>
       <pubDate>Thu, 02 Oct 2025 21:29:08 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/script-for-devops-notes/</guid>
+      <guid>http://localhost:1313/posts/script-for-devops-notes/</guid>
       <description>&lt;p&gt;I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type &amp;ldquo;devops&amp;rdquo; on my command line in any directory and I&amp;rsquo;m prompted to enter the name of the file which will also be the title of the note.&lt;/p&gt;</description>
     </item>
   </channel>

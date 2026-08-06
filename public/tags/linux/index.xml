@@ -1,26 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Diing</title>
-    <link>http://localhost:1313/blog/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Diing</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Feb 2026 21:27:43 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2026 20:43:16 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Current State of My Homelab: 17 Containers</title>
+      <link>http://localhost:1313/posts/current-state-of-my-homelab-17-containers/</link>
+      <pubDate>Wed, 05 Aug 2026 20:43:16 +0300</pubDate>
+      <guid>http://localhost:1313/posts/current-state-of-my-homelab-17-containers/</guid>
+      <description>&lt;p&gt;Today, while doing my daily maintainance tasks for my homelab, I had to pause and reminisce how far I came running and managing my homelab. A year ago, this was just an idea and I was always reading about other people&amp;rsquo;s blog about their homelabs. Today, I run my own and it has become a very important part of my digital life.&lt;/p&gt;
+&lt;p&gt;My setup isn&amp;rsquo;t some massive server rack you would see on YouTube with some fancy RGB lighting. It&amp;rsquo;s a single Raspberry Pi 5 (8GB variant), sitting on my desk running debian linux. Right now, it&amp;rsquo;s spinning 17 containers and acting as the backbone for my digital life. It&amp;rsquo;s not perfect, definitely not enterprise-grade, but it is my safe playing ground for learning cloud-native infrastructure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stop Running Docker Containers as Root</title>
+      <link>http://localhost:1313/posts/stop-running-docker-containers-as-root/</link>
+      <pubDate>Tue, 14 Apr 2026 11:48:47 +0300</pubDate>
+      <guid>http://localhost:1313/posts/stop-running-docker-containers-as-root/</guid>
+      <description>&lt;p&gt;You&amp;rsquo;ve probably been running containers the wrong way like me a while ago but still don&amp;rsquo;t know it yet. Processes inside a container run as &lt;code&gt;root&lt;/code&gt; user by default. Here is why this is a security risk and how to fix it.&lt;/p&gt;
+&lt;h2 id=&#34;shared-kernel&#34;&gt;Shared Kernel&lt;/h2&gt;
+&lt;p&gt;Unlike Virtual Machines, Docker containers share your host machine&amp;rsquo;s kernel. The &lt;code&gt;root&lt;/code&gt; user inside your container is basically the same &lt;code&gt;root&lt;/code&gt; user on your actual computer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing My Dns Server That Was Crashing on Boot</title>
+      <link>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</link>
+      <pubDate>Wed, 18 Feb 2026 20:21:44 +0300</pubDate>
+      <guid>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</guid>
+      <description>&lt;p&gt;I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi&amp;rsquo;s IP for incoming DNS requests. If I restarted the service manually &lt;code&gt;systemctl restart dnsmasq&lt;/code&gt;, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi&amp;rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command &lt;code&gt;ssh astro@prod.homelab&lt;/code&gt; could not work since the client machine could not resolve the name &lt;code&gt;prod.homelab&lt;/code&gt;. I had to ssh using the IP Address.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Containerization</title>
-      <link>http://localhost:1313/blog/posts/containerization/</link>
+      <link>http://localhost:1313/posts/containerization/</link>
       <pubDate>Sat, 14 Feb 2026 21:27:43 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/containerization/</guid>
-      <description>&lt;p&gt;It has been a few days so far learning about containers and I&amp;rsquo;m fascinated by the advances they bring in the tech industry. Containers revolutionalized the development, testing and deployment of applications.&lt;/p&gt;&#xA;&lt;p&gt;Before containers, teams would develop applications locally on their machines and ship the application to the operations team. Developers needed to specify the dependancies together with their versions and environment configurations for this application to run successfully on other machines e.g the production servers. This would sometimes be a lot of work writing all the requirements needed for a specific application to run and on the other end, the operations team would make mistakes in configuring the environment and the app fails to run. This would lead to conflicts between the two teams with the developer saying &amp;ldquo;It was working on my end&amp;rdquo;. With containers, teams utilize an image which is a portable package which has all the requirements required to run an application and it is spun up with a container.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/containerization/</guid>
+      <description>&lt;p&gt;It has been a few days so far learning about containers and I&amp;rsquo;m fascinated by the advances they bring in the tech industry. Containers revolutionalized the development, testing and deployment of applications.&lt;/p&gt;
+&lt;p&gt;Before containers, teams would develop applications locally on their machines and ship the application to the operations team. Developers needed to specify the dependancies together with their versions and environment configurations for this application to run successfully on other machines e.g the production servers. This would sometimes be a lot of work writing all the requirements needed for a specific application to run and on the other end, the operations team would make mistakes in configuring the environment and the app fails to run. This would lead to conflicts between the two teams with the developer saying &amp;ldquo;It was working on my end&amp;rdquo;. With containers, teams utilize an image which is a portable package which has all the requirements required to run an application and it is spun up with a container.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Created Another Script</title>
-      <link>http://localhost:1313/blog/posts/created-another-script/</link>
+      <link>http://localhost:1313/posts/created-another-script/</link>
       <pubDate>Sat, 04 Oct 2025 14:07:04 +0300</pubDate>
-      <guid>http://localhost:1313/blog/posts/created-another-script/</guid>
-      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;&#xA;&lt;li&gt;Enter your blog title&lt;/li&gt;&#xA;&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;&#xA;&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/created-another-script/</guid>
+      <description>&lt;p&gt;Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;code&gt;blog&lt;/code&gt; from the command line&lt;/li&gt;
+&lt;li&gt;Enter your blog title&lt;/li&gt;
+&lt;li&gt;The scripts automatically generates a file using Hugo&amp;rsquo;s archetype template. The file&amp;rsquo;s name is the title provided&lt;/li&gt;
+&lt;li&gt;It then opens the file automatically in Neovim for editing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The script:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Posts | Diing</title>
 <meta name="keywords" content="">
 <meta name="description" content="Posts - Diing">
-<meta name="author" content="">
-<link rel="canonical" href="http://10.0.232.214:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.aa1688e6339fb9cdf60fb826eb1256f070690680649dc91f2bd39903f51f15e3.css" integrity="sha256-qhaI5jOfuc32D7gm6xJW8HBpBoBknckfK9OZA/UfFeM=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://10.0.232.214:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://10.0.232.214:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://10.0.232.214:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://10.0.232.214:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://10.0.232.214:1313/safari-pinned-tab.svg">
+<meta name="author" content="Diing Garang">
+<link rel="canonical" href="http://localhost:1313/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1fe024585d71fe7cb491af907f5e4879d239c133a8aca776238323d7da930192.css" integrity="sha256-H&#43;AkWF1x/ny0ka&#43;Qf15IedI5wTOorKd2I4Mj19qTAZI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://10.0.232.214:1313/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://10.0.232.214:1313/posts/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -29,29 +29,52 @@
 
     </style>
 </noscript>
-
-</head>
-
-<body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
     }
 
 </script>
+<meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="Diing">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Documenting my DevOps learning journey">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
 
-<header class="header">
-    <nav class="nav">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+  <meta name="twitter:description" content="Documenting my DevOps learning journey">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
-            <a href="http://10.0.232.214:1313/" accesskey="h" title="Diing (Alt + H)">Diing</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Diing (Alt + H)">Diing</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -67,24 +90,24 @@
                 </button>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
-                <a href="http://10.0.232.214:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://10.0.232.214:1313/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span class="active">Posts</span>
                 </a>
             </li>
             <li>
-                <a href="http://10.0.232.214:1313/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://10.0.232.214:1313/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -100,162 +123,168 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Sixteenth Post
+    <h2 class="entry-hint-parent">A Server
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
+    <p>This afternoon as I was taking a break, I came across a good youtube video here explaining what exactly a server is.
+“A server is not just a physical computer, it’s a role that a computer takes; because any ordinary desktop computer can be set up as a server, and it doesn’t necessarily have to be a powerful computer.” - That’s a bar
 References</p>
   </div>
-  <footer class="entry-footer"><span title='2025-10-01 19:33:13 +0300 EAT'>October 1, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Sixteenth Post" href="http://10.0.232.214:1313/posts/sixteenth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2026-01-29 18:28:01 +0300 EAT'>January 29, 2026</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to A Server" href="http://localhost:1313/posts/a-server/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Fourteenth Post
+    <h2 class="entry-hint-parent">Migrated My Devops Notes to Hugo and Hextra
     </h2>
   </header>
   <div class="entry-content">
-    <p>References</p>
+    <p>Finally, I have decided to render my DevOps notes on a site powered by Hugo and Hextra and deployed it using github pages. This is what I call My Kasten, a German word meaning a crate or a container. It will act as my Second Brain where I will document everything I will be learning.
+The purpose of this is that I believe it will help me in the future or anyone else who will find it useful to refer to something.
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:45:38 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Fourteenth Post" href="http://10.0.232.214:1313/posts/fourteenth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2026-01-24 23:37:03 +0300 EAT'>January 24, 2026</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to Migrated My Devops Notes to Hugo and Hextra" href="http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Thirteenth Post
+    <h2 class="entry-hint-parent">My First Contract
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>Recently, I crossed a major milestone, I landed my first freelance contract for a local startup NGO doing good work. They needed digital presence. I built them a site and integrated a Content Management System that the admin can use to draft content they want to display on the website and the site builds and deploys automatically
+References</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:40:40 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Thirteenth Post" href="http://10.0.232.214:1313/posts/thirteenth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2026-01-17 13:24:25 +0300 EAT'>January 17, 2026</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to My First Contract" href="http://localhost:1313/posts/my-first-contract/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Twelfth Post
+    <h2 class="entry-hint-parent">Under the Hood of a Gcc Compiler
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>Today I learnt something worth publishing here. As developers we write code day by day and it is executed by our machines. But how does our computers understand this code and execute it ?
+I am going to walk through the four core changes of a GCC compiler to transform a simple C program into a state that a machine can understand and execute.
+I created a simple file main.c below:
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:36:45 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Twelfth Post" href="http://10.0.232.214:1313/posts/twelfth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2025-10-11 18:06:19 +0300 EAT'>October 11, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to Under the Hood of a Gcc Compiler" href="http://localhost:1313/posts/under-the-hood-of-a-gcc-compiler/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Eleventh Post
+    <h2 class="entry-hint-parent">Final Year Project
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>I have been working on my final year project lately. Today, I plan to export the trained model onto the raspberry pi AI camera hardware. The model size is 22 mbs and the AI camera can accommodate only 8 mbs. Luckily, there are quantization methods provided by ultralytics that will shrink the model without it losing too much accuracy.
+References</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:28:14 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Eleventh Post" href="http://10.0.232.214:1313/posts/eleventh-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2025-10-07 19:44:27 +0300 EAT'>October 7, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to Final Year Project" href="http://localhost:1313/posts/final-year-project/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Tenth Post
+    <h2 class="entry-hint-parent">Created Another Script
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>Another day creating another automation, it may not be a complex one but still its an automation. Today I created another simple beautiful script that automates my blogging workflow. Instead of manually navigating to my Hugo directory and running commands, I can create a new post from anywhere in my system by just running the custom command “blog”.
+How it works
+Run blog from the command line Enter your blog title The scripts automatically generates a file using Hugo’s archetype template. The file’s name is the title provided It then opens the file automatically in Neovim for editing The script:
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:27:29 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Tenth Post" href="http://10.0.232.214:1313/posts/tenth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2025-10-04 14:07:04 +0300 EAT'>October 4, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to Created Another Script" href="http://localhost:1313/posts/created-another-script/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Ninth Post
+    <h2 class="entry-hint-parent">Script for Devops Notes
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>I created a simple script for generating a new note for my devops learning notes. This will increase my productivity since I will not have to bother typing current dates and times of each and every note. The script works perfect as I only type “devops” on my command line in any directory and I’m prompted to enter the name of the file which will also be the title of the note.
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:26:33 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Ninth Post" href="http://10.0.232.214:1313/posts/ninth-post/"></a>
+  <footer class="entry-footer">
+
+<span title='2025-10-02 21:29:08 +0300 EAT'>October 2, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to Script for Devops Notes" href="http://localhost:1313/posts/script-for-devops-notes/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Eighth Post
+    <h2 class="entry-hint-parent">First Official Post
     </h2>
   </header>
   <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
+    <p>I’m excited because i just configured my blog set-up, powered by Hugo and Papermod. I plan to post as long as I can and I believe it will be worth it in the future.
+“Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle.”
+— Steve Jobs
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:25:46 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Eighth Post" href="http://10.0.232.214:1313/posts/eighth-post/"></a>
-</article>
+  <footer class="entry-footer">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Seventh Post
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:25:04 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Seventh Post" href="http://10.0.232.214:1313/posts/seventh-post/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Sixth Post
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>I am testing hugo and papermod
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-09-30 17:24:13 +0300 EAT'>September 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Sixth Post" href="http://10.0.232.214:1313/posts/sixth-post/"></a>
+<span title='2025-10-01 21:07:08 +0300 EAT'>October 1, 2025</span>&nbsp;·&nbsp;<span>Diing Garang</span></footer>
+  <a class="entry-link" aria-label="post link to First Official Post" href="http://localhost:1313/posts/first-official-post/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="http://10.0.232.214:1313/posts/">
+    <a class="prev" href="http://localhost:1313/posts/">
       «&nbsp;Prev&nbsp;
-    </a>
-    <a class="next" href="http://10.0.232.214:1313/posts/page/3/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://10.0.232.214:1313/">Diing</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Diing</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -282,25 +311,25 @@ References</p>
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

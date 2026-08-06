@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Networking on Diing</title>
+    <link>http://localhost:1313/tags/networking/</link>
+    <description>Recent content in Networking on Diing</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Feb 2026 20:21:44 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing My Dns Server That Was Crashing on Boot</title>
+      <link>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</link>
+      <pubDate>Wed, 18 Feb 2026 20:21:44 +0300</pubDate>
+      <guid>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</guid>
+      <description>&lt;p&gt;I recently ran into an issue while trying to ssh into my Raspberry Pi which is a dedicated DNS server for my homelab. The dnsmasq server is configured to listen to the Pi&amp;rsquo;s IP for incoming DNS requests. If I restarted the service manually &lt;code&gt;systemctl restart dnsmasq&lt;/code&gt;, it worked fine. But everytime I rebooted the Pi, the service failed to start. The Pi&amp;rsquo;s IP is mapped into the name prod.homelab and with the DNS server failing to start, the command &lt;code&gt;ssh astro@prod.homelab&lt;/code&gt; could not work since the client machine could not resolve the name &lt;code&gt;prod.homelab&lt;/code&gt;. I had to ssh using the IP Address.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

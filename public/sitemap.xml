@@ -2,86 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/posts/containerization/</loc>
+    <loc>http://localhost:1313/tags/containers/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/current-state-of-my-homelab-17-containers/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/homelab/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-08-05T20:43:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/podman/</loc>
+    <lastmod>2026-05-19T20:08:40+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/thinking-about-podman-my-docker-daemon-crashed/</loc>
+    <lastmod>2026-05-19T20:08:40+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2026-04-25T11:31:26+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gitops/</loc>
+    <lastmod>2026-04-25T11:31:26+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/scaling-my-homelab/</loc>
+    <lastmod>2026-04-25T11:31:26+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/blog/</loc>
+    <lastmod>2026-04-19T14:04:35+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ci/cd/</loc>
+    <lastmod>2026-04-19T14:04:35+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/dockerized-my-blog-setup/</loc>
+    <lastmod>2026-04-19T14:04:35+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/stop-running-docker-containers-as-root/</loc>
+    <lastmod>2026-04-14T11:48:47+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2026-03-19T15:53:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/ai-in-gaming-isnt-slop/</loc>
+    <lastmod>2026-03-19T15:53:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dlss/</loc>
+    <lastmod>2026-03-19T15:53:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gaming/</loc>
+    <lastmod>2026-03-19T15:53:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nvidia/</loc>
+    <lastmod>2026-03-19T15:53:16+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/fixing-my-dns-server-that-was-crashing-on-boot/</loc>
+    <lastmod>2026-02-18T20:21:44+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/networking/</loc>
+    <lastmod>2026-02-18T20:21:44+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/containerization/</loc>
     <lastmod>2026-02-14T21:27:43+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-02-14T21:27:43+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/docker/</loc>
-    <lastmod>2026-02-14T21:27:43+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/linux/</loc>
-    <lastmod>2026-02-14T21:27:43+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/</loc>
-    <lastmod>2026-02-14T21:27:43+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/</loc>
-    <lastmod>2026-02-14T21:27:43+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/https/</loc>
+    <loc>http://localhost:1313/posts/https/</loc>
     <lastmod>2026-02-08T23:44:04+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/security/</loc>
+    <loc>http://localhost:1313/tags/web/</loc>
     <lastmod>2026-02-08T23:44:04+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/web/</loc>
-    <lastmod>2026-02-08T23:44:04+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/career/</loc>
+    <loc>http://localhost:1313/tags/career/</loc>
     <lastmod>2026-02-05T00:30:26+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/homelab/</loc>
+    <loc>http://localhost:1313/posts/homelab/</loc>
     <lastmod>2026-02-05T00:30:26+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/homelab/</loc>
-    <lastmod>2026-02-05T00:30:26+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/a-server/</loc>
+    <loc>http://localhost:1313/posts/a-server/</loc>
     <lastmod>2026-01-29T18:28:01+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/blog/</loc>
+    <loc>http://localhost:1313/posts/migrated-my-devops-notes-to-hugo-and-hextra/</loc>
     <lastmod>2026-01-24T23:37:03+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/migrated-my-devops-notes-to-hugo-and-hextra/</loc>
-    <lastmod>2026-01-24T23:37:03+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/my-first-contract/</loc>
+    <loc>http://localhost:1313/posts/my-first-contract/</loc>
     <lastmod>2026-01-17T13:24:25+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/web-development/</loc>
+    <loc>http://localhost:1313/tags/web-development/</loc>
     <lastmod>2026-01-17T13:24:25+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/c/</loc>
+    <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/under-the-hood-of-a-gcc-compiler/</loc>
+    <loc>http://localhost:1313/posts/under-the-hood-of-a-gcc-compiler/</loc>
     <lastmod>2025-10-11T18:06:19+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/final-year-project/</loc>
+    <loc>http://localhost:1313/posts/final-year-project/</loc>
     <lastmod>2025-10-07T19:44:27+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/bash/</loc>
+    <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/created-another-script/</loc>
+    <loc>http://localhost:1313/posts/created-another-script/</loc>
     <lastmod>2025-10-04T14:07:04+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/devops/</loc>
+    <loc>http://localhost:1313/posts/script-for-devops-notes/</loc>
     <lastmod>2025-10-02T21:29:08+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/script-for-devops-notes/</loc>
-    <lastmod>2025-10-02T21:29:08+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/first-official-post/</loc>
+    <loc>http://localhost:1313/posts/first-official-post/</loc>
     <lastmod>2025-10-01T21:07:08+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/blog/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>

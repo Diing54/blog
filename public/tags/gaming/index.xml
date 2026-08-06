@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gaming on Diing</title>
+    <link>http://localhost:1313/tags/gaming/</link>
+    <description>Recent content in Gaming on Diing</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 Mar 2026 15:53:16 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI in Gaming Isn&#39;t Slop</title>
+      <link>http://localhost:1313/posts/ai-in-gaming-isnt-slop/</link>
+      <pubDate>Thu, 19 Mar 2026 15:53:16 +0300</pubDate>
+      <guid>http://localhost:1313/posts/ai-in-gaming-isnt-slop/</guid>
+      <description>&lt;p&gt;2 days ago at &lt;a href=&#34;https://www.youtube.com/live/jw_o0xr8MWU?si=tTgv8rSlWpUD9ao-&#34;&gt;NVIDIA GTC&lt;/a&gt;, NVIDIA introduced the next evolution of its &lt;a href=&#34;https://prosettings.net/blog/upscaling-technologies-explained/&#34;&gt;upscaling&lt;/a&gt; and frame generation technology, DLSS 5. This faced immediate reaction and backlash from the gaming community. The community was divided. We even went at it at the Whatsapp groupchat with my friends. Critics labelled it as &amp;ldquo;AI Slop&amp;rdquo;, the rendering results showcased by NVIDIA looked &amp;ldquo;horrible&amp;rdquo;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;From what I noted, this is just a deeper debate on Engineering vs Artistry&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
