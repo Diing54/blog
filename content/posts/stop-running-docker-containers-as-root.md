@@ -14,7 +14,7 @@ If an attacker manages to exploit a vulnerability in your containerized app and 
 
 I have containerized a program called [yt-dlp](https://github.com/yt-dlp/yt-dlp) which is a command line tool that is used to download YouTube videos. Initially, I ran the container as `root`. This can be seen from the Dockerfile I used to build its image;
 
-```YAML
+```dockerfile
 FROM ubuntu:24.04
 
 WORKDIR /mydir
@@ -30,7 +30,7 @@ ENTRYPOINT ["/usr/local/bin/yt-dlp"]
 ## The Fix
 Instead of letting our container run as `root` by default, we need to bake an uprevileged user directly into the image. Here is the new Dockerfile;
 
-```YAML
+```dockerfile
 FROM ubuntu:24.04
 WORKDIR /mydir
 
