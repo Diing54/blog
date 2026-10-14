@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Africa/Nairobi)",
+    "schedule:weekly"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
+  "packageRules": [
+    {
+      "description": "Group PaperMod theme updates (whether via Git Submodule or Go Module) into a single PR",
+      "matchDatasources": ["git-refs", "go"],
+      "matchPackageNames": [
+        "adityatelange/hugo-PaperMod", 
+        "github.com/adityatelange/hugo-PaperMod"
+      ],
+      "groupName": "Hugo PaperMod Theme",
+      "automerge": false
+    },
+    {
+      "description": "Auto-merge GitHub Actions updates to keep CI/CD fresh without noise",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions Dependencies",
+      "automerge": true
+    }
+  ]
+}
